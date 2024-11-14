@@ -42,9 +42,12 @@ public class MovementScript : MonoBehaviour, IControllable
         if (_moveDirection != Vector3.zero)
         {
             Vector3 moveVector = 0.1f * (_isWalking ? _walkSpeed : _runSpeed) * _moveDirection;
+
+            // Rotate move vector to the direction the player is facing
             Vector3 forward = Vector3.ProjectOnPlane(_head.transform.forward, Vector3.up);
             float angle = Vector3.SignedAngle(Vector3.forward, forward, Vector3.up);
             moveVector = Quaternion.AngleAxis(angle, Vector3.up) * moveVector;
+
             _agent.Move(moveVector * Time.deltaTime);
         }
         else
