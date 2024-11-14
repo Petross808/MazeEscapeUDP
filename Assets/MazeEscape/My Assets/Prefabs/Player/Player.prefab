@@ -148,6 +148,8 @@ GameObject:
   - component: {fileID: 7347661357544827500}
   - component: {fileID: 7950774673976438002}
   - component: {fileID: -4079974667502027405}
+  - component: {fileID: 7633119153281101090}
+  - component: {fileID: 7222087516450069745}
   - component: {fileID: 9173592318257739066}
   m_Layer: 0
   m_Name: Player
@@ -202,6 +204,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 9215190223439952387}
   _cameraSensitivity: {x: 0.2, y: 0.2}
+--- !u!114 &7633119153281101090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839841866121523076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e74dcbeafb5a347b42f6693b0c519b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactEvent: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb, type: 2}
+--- !u!114 &7222087516450069745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839841866121523076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85faa72e2f5b0441976d5163d6b425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
+  _onDamageEvent: {fileID: 11400000, guid: 6d8740d6e5ec2d4428cd1def156c89ab, type: 2}
+  _onDeathEvent: {fileID: 11400000, guid: 8ad32a75e40324e4ab39b94e4d82e341, type: 2}
+  _onHealEvent: {fileID: 11400000, guid: bb3ffdee5ec03bd4eb2b1fde5709624e, type: 2}
 --- !u!195 &9173592318257739066
 NavMeshAgent:
   m_ObjectHideFlags: 0

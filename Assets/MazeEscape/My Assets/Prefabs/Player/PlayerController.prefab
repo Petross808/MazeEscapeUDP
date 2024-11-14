@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8ff618562176949a88165e7df0a598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pawnMovement: {fileID: 0}
+  _pawn: {fileID: 0}
+  _playerInteractEvent: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb,
+    type: 2}
 --- !u!114 &6526311527085420223
 MonoBehaviour:
   m_ObjectHideFlags: 0
