@@ -10,7 +10,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private IControllable _controllableScript;
     private CameraScript _cameraScript;
-
+    private InteractScript _interactScript;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +18,7 @@ public class PlayerControllerScript : MonoBehaviour
         _input = GetComponent<PlayerInput>();
         _controllableScript = _pawn.GetComponent<IControllable>();
         _cameraScript = _pawn.GetComponent<CameraScript>();
+        _interactScript = _pawn.GetComponent<InteractScript>();
     }
 
     private void OnEnable()
@@ -39,6 +40,7 @@ public class PlayerControllerScript : MonoBehaviour
         _input.actions["Walk"].performed += WalkStart;
         _input.actions["Walk"].canceled += WalkEnd;
         _input.actions["Aim"].performed += AimChanged;
+        _input.actions["Interact"].performed += OnInteract;
     }
 
     private void UnRegisterInGameControls()
@@ -50,6 +52,7 @@ public class PlayerControllerScript : MonoBehaviour
         _input.actions["Walk"].performed -= WalkStart;
         _input.actions["Walk"].canceled -= WalkEnd;
         _input.actions["Aim"].performed -= AimChanged;
+        _input.actions["Interact"].performed -= OnInteract;
     }
 
     private void RunStart(InputAction.CallbackContext context)
@@ -75,5 +78,10 @@ public class PlayerControllerScript : MonoBehaviour
     private void AimChanged(InputAction.CallbackContext context)
     {
         _cameraScript?.AimChanged(context.ReadValue<Vector2>());
+    }
+
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        _interactScript?.OnInteract();
     }
 }
