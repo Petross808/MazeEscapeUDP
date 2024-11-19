@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 568272245392040834}
   - component: {fileID: 4142694111678831541}
   - component: {fileID: 6526311527085420223}
+  - component: {fileID: 367878724818667668}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pawn: {fileID: 0}
-  _playerInteractEvent: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb,
+  _onPauseTogglePressed: {fileID: 11400000, guid: ddc248cc8d594c8499fa48d112a36ec6,
     type: 2}
 --- !u!114 &6526311527085420223
 MonoBehaviour:
@@ -79,3 +80,31 @@ MonoBehaviour:
   m_DefaultActionMap: InGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &367878724818667668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720600199109195604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 98cd9f5fb1df806408079182d3df28ee, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4142694111678831541}
+        m_TargetAssemblyTypeName: PlayerControllerScript, Assembly-CSharp
+        m_MethodName: ChangeControls
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
