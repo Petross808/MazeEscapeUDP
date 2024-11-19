@@ -34,7 +34,7 @@ public class HealthScript : MonoBehaviour
         _currentHealth = Mathf.Max(0, _currentHealth);
         delta -= _currentHealth;
 
-        _onDamageEvent?.Raise(new(this, ("amount", delta)));
+        _onDamageEvent?.Raise(this, delta);
 
         if (_currentHealth <= 0)
             Die();
@@ -43,7 +43,7 @@ public class HealthScript : MonoBehaviour
     private void Die()
     {
         _alive = false;
-        _onDeathEvent?.Raise(new(this));
+        _onDeathEvent?.Raise(this);
     }
 
     public void HealDamage(int amount)
@@ -56,6 +56,6 @@ public class HealthScript : MonoBehaviour
         _currentHealth = Mathf.Min(_maxHealth, _currentHealth);
         delta = _currentHealth - delta;
 
-        _onHealEvent?.Raise(new(this, ("amount", delta)));
+        _onHealEvent?.Raise(this, delta);
     }
 }

@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _editorName: OnPlayerTakeDamage
   _editorDescription: Raised when the player heals their health.
+  _contextVariables:
+  - Name: Amount
+    Type: System.Int32

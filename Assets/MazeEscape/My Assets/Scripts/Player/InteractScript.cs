@@ -8,6 +8,6 @@ public class InteractScript : MonoBehaviour
 
     public void OnInteract()
     {
-        _interactEvent.Raise(new(this));
+        _interactEvent.Raise(this);
     }
 }
