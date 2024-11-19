@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: OnPlayerInteract
   m_EditorClassIdentifier: 
   _editorName: OnPlayerInteract
-  _editorDescription: "Raised when the player does the interact action.\nParams:\n\tNone"
+  _editorDescription: Raised when the player does the interact action.
+  _contextVariables: []

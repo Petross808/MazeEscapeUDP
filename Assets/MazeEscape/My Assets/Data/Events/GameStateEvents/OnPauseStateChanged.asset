@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: OnPauseStateChanged
   m_EditorClassIdentifier: 
   _editorName: OnPauseStateChanged
-  _editorDescription: "Raised when the game is paused or resumed.\nParams: \n\tpauseState:
-    bool"
+  _editorDescription: Raised when the game is paused or resumed.
+  _contextVariables:
+  - Name: IsPaused
+    Type: System.Boolean

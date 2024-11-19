@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
-  m_Name: OnPlayerDeath
+  m_Name: OnMainMenuOpened
   m_EditorClassIdentifier: 
-  _editorName: OnPlayerDeath
-  _editorDescription: Raised when the player dies.
+  _editorName: OnMainMenuOpened
+  _editorDescription: Raised when the Main Menu is opened, after transition from
+    the game.
   _contextVariables: []
