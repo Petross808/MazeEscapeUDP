@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MazeEscape/My%20Assets/UI/Stylesheets/SettingsStylesheet.uss?fileID=7433441132597879392&amp;guid=242733ebc73d2194ab95fbfd22e4479f&amp;type=3#SettingsStylesheet" />
+    <engine:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Backgrounds/Background.png?fileID=2800000&amp;guid=1e45c9e6bcf1d2a489eb0356da15e724&amp;type=3#Background&quot;);">
+        <engine:Label text="Label" name="header" />
+        <engine:Slider label="Slider" value="42" high-value="100" name="MasterSlider" />
+        <engine:Slider label="Slider" value="42" high-value="100" name="MusicSlider" />
+        <engine:Slider label="Slider" value="42" high-value="100" name="SFXSlider" />
+    </engine:VisualElement>
+</engine:UXML>
