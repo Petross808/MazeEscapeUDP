@@ -1,9 +1,10 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MazeEscape/My%20Assets/UI/Stylesheets/SettingsStylesheet.uss?fileID=7433441132597879392&amp;guid=242733ebc73d2194ab95fbfd22e4479f&amp;type=3#SettingsStylesheet" />
-    <engine:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Backgrounds/Background.png?fileID=2800000&amp;guid=1e45c9e6bcf1d2a489eb0356da15e724&amp;type=3#Background&quot;);">
-        <engine:Label text="Label" name="header" />
-        <engine:Slider label="Slider" value="42" high-value="100" name="MasterSlider" />
-        <engine:Slider label="Slider" value="42" high-value="100" name="MusicSlider" />
-        <engine:Slider label="Slider" value="42" high-value="100" name="SFXSlider" />
+    <engine:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Backgrounds/Background%201.png?fileID=2800000&amp;guid=a0a8e209b62194c4690c7f53e1090896&amp;type=3#Background 1&quot;); cursor: initial;">
+        <engine:Label text="Settings&#10;" name="Settings" class="header" style="width: 20%; height: 20%; top: 20%; font-size: 80px; letter-spacing: 5px;" />
+        <engine:Slider label="Master" value="42" high-value="100" name="MasterSlider" style="width: 80%; height: 20%; left: -5%; top: 35%; justify-content: center; align-self: stretch; -unity-text-align: upper-left; background-image: none; position: absolute;" />
+        <engine:Button text="Button" name="Quit" class="button" style="color: rgba(27, 27, 27, 0); background-image: url(&quot;project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Icons/IconSet_1%20(31).png?fileID=21300000&amp;guid=15b14412b6dc483418db1547f9384613&amp;type=3#IconSet_1 (31)&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); width: 5%; height: 9%; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; left: 85%; top: -13%;" />
+        <engine:Slider label="music&#10;" value="42" high-value="100" name="MusicSlider" style="width: 80%; height: 20%; left: -5%; top: 50%; justify-content: center; align-self: stretch; -unity-text-align: upper-left; background-image: none; position: absolute;" />
+        <engine:Slider label="SFX" value="42" high-value="100" name="SFXSlider" style="width: 80%; height: 20%; left: -5%; top: 65%; justify-content: center; align-self: stretch; -unity-text-align: upper-left; background-image: none; position: absolute;" />
     </engine:VisualElement>
 </engine:UXML>
