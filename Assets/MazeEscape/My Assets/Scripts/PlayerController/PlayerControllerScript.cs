@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,12 +8,12 @@ public class PlayerControllerScript : MonoBehaviour
     private PlayerInput _input;
 
     [SerializeField] private GameObject _pawn;
+    [SerializeField] private GameEvent _onPauseTogglePressed;
 
     private IControllable _controllableScript;
     private CameraScript _cameraScript;
     private InteractScript _interactScript;
 
-    // Start is called before the first frame update
     void Awake()
     {
         _input = GetComponent<PlayerInput>();
@@ -23,36 +24,74 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void OnEnable()
     {
-        RegisterInGameControls();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        UnRegisterInGameControls();
+        _input.SwitchCurrentActionMap("Menu");
+        RegisterMenuControls();
     }
 
     private void OnDisable()
     {
         UnRegisterInGameControls();
+        UnRegisterMenuControls();
     }
 
     private void RegisterInGameControls()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         _input.actions["Run"].performed += RunStart;
         _input.actions["Run"].canceled += RunEnd;
         _input.actions["Walk"].performed += WalkStart;
         _input.actions["Walk"].canceled += WalkEnd;
         _input.actions["Aim"].performed += AimChanged;
         _input.actions["Interact"].performed += OnInteract;
+        _input.actions["Pause"].performed += OnPauseToggle;
     }
 
     private void UnRegisterInGameControls()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
         _input.actions["Run"].performed -= RunStart;
         _input.actions["Run"].canceled -= RunEnd;
         _input.actions["Walk"].performed -= WalkStart;
         _input.actions["Walk"].canceled -= WalkEnd;
         _input.actions["Aim"].performed -= AimChanged;
-        _input.actions["Interact"].performed -= OnInteract;
+        _input.actions["Pause"].performed -= OnPauseToggle;
+
+        RunEnd(new());
+        WalkEnd(new());
+    }
+
+    private void RegisterMenuControls()
+    {
+        _input.actions["Pause"].performed += OnPauseToggle;
+    }
+
+    private void UnRegisterMenuControls()
+    {
+        _input.actions["Pause"].performed += OnPauseToggle;
+    }
+
+    [EventSignature(typeof(bool))]
+    public void ChangeControls(GameEvent.CallbackContext context)
+    {
+        bool isPaused = context.Get<bool>();
+        if(isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            UnRegisterInGameControls();
+            _input.SwitchCurrentActionMap("Menu");
+            RegisterMenuControls();
+            
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            UnRegisterMenuControls();
+            _input.SwitchCurrentActionMap("InGame");
+            RegisterInGameControls();
+        }
     }
 
     private void RunStart(InputAction.CallbackContext context)
@@ -84,4 +123,10 @@ public class PlayerControllerScript : MonoBehaviour
     {
         _interactScript?.OnInteract();
     }
+
+    private void OnPauseToggle(InputAction.CallbackContext context)
+    {
+        _onPauseTogglePressed?.Raise(this);
+    }
+
 }

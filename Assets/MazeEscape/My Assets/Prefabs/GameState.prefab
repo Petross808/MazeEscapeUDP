@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3720600199109195604
+--- !u!1 &3497963717713764315
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 568272245392040834}
-  - component: {fileID: 4142694111678831541}
-  - component: {fileID: 6526311527085420223}
-  - component: {fileID: 367878724818667668}
+  - component: {fileID: 6169179055378874841}
+  - component: {fileID: 3267681082584340118}
+  - component: {fileID: 4527528825529303243}
+  - component: {fileID: 8415283475820347848}
   m_Layer: 0
-  m_Name: PlayerController
+  m_Name: GameState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &568272245392040834
+--- !u!4 &6169179055378874841
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3720600199109195604}
+  m_GameObject: {fileID: 3497963717713764315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,71 +34,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4142694111678831541
+--- !u!114 &3267681082584340118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3720600199109195604}
+  m_GameObject: {fileID: 3497963717713764315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e8ff618562176949a88165e7df0a598, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd8c9c8a13813c4c925164e70455c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pawn: {fileID: 0}
-  _onPauseTogglePressed: {fileID: 11400000, guid: ddc248cc8d594c8499fa48d112a36ec6,
+  _onGameStartedEvent: {fileID: 11400000, guid: 167dd4af9a7bb794db83484ef5d70d0d,
     type: 2}
---- !u!114 &6526311527085420223
+  _onMainMenuOpenedEvent: {fileID: 11400000, guid: 2bce15325f0ac9f46a002fab7ceb3d01,
+    type: 2}
+--- !u!114 &4527528825529303243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3720600199109195604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 5c355a44e548e1c46bb1d77ba5c9df66,
-    type: 3}
-  m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: InGame
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &367878724818667668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3720600199109195604}
+  m_GameObject: {fileID: 3497963717713764315}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 98cd9f5fb1df806408079182d3df28ee, type: 2}
+  _listeningTo: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4142694111678831541}
-        m_TargetAssemblyTypeName: PlayerControllerScript, Assembly-CSharp
-        m_MethodName: ChangeControls
+      - m_Target: {fileID: 3267681082584340118}
+        m_TargetAssemblyTypeName: GameState, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8415283475820347848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497963717713764315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: cbc9191e7e4813d41884e78fe966e1ac, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3267681082584340118}
+        m_TargetAssemblyTypeName: GameState, Assembly-CSharp
+        m_MethodName: OpenMainMenu
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

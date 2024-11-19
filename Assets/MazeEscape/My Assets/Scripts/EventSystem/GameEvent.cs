@@ -9,6 +9,17 @@ public class GameEvent : ScriptableGameObject
 {
     private List<EventListener> _listeners = new();
 
+#if UNITY_EDITOR
+    [SerializeField] private bool _debugLog;
+#endif
+    private void DebugLog(string message, params object[] values)
+    {
+    #if UNITY_EDITOR
+        if(_debugLog)
+            Debug.Log($"{this.name} {message}: '({string.Join(",", values)})'");
+    #endif
+    }
+
     [SerializeField] private List<ContextVariable> _contextVariables;
 
     private IReadOnlyList<(string Name, Type Type)> _context;
@@ -21,6 +32,7 @@ public class GameEvent : ScriptableGameObject
         {
             _listeners[i].OnEventRaised(context);
         }
+        DebugLog("Raise", parameters);
     }
 
     public void RegisterListener(EventListener listener)
@@ -29,11 +41,13 @@ public class GameEvent : ScriptableGameObject
         {
             _listeners.Add(listener);
         }
+        DebugLog("Register", listener);
     }
 
     public void UnregisterListener(EventListener listener)
     {
         _listeners.Remove(listener);
+        DebugLog("Unregister", listener);
     }
 
     public IReadOnlyList<(string Name, Type Type)> GetContextSignature()
@@ -67,7 +81,7 @@ public class GameEvent : ScriptableGameObject
 
         EventListener[] listeners = GameObject.FindObjectsByType<EventListener>(FindObjectsSortMode.None);
         foreach (var listener in listeners)
-            listener.OnValidate();
+            listener.ValidateSignature();
 
         static void ClearConsole()
         {
@@ -86,14 +100,13 @@ public class GameEvent : ScriptableGameObject
         [Delayed] public string Type;
     }
 
-    public class CallbackContext
+    public struct CallbackContext
     {
         private object _sender;
         private object[] _parameters;
         private GameEvent _gameEvent;
 
         public object Sender => _sender;
-        public object[] Parameters => _parameters;
 
         public CallbackContext(object sender, GameEvent gameEvent)
         {
