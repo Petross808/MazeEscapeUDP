@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/GameEvent", order = 1)]
@@ -6,8 +9,14 @@ public class GameEvent : ScriptableGameObject
 {
     private List<EventListener> _listeners = new();
 
-    public void Raise(CallbackContext context)
+    [SerializeField] private List<ContextVariable> _contextVariables;
+
+    private IReadOnlyList<(string Name, Type Type)> _context;
+
+    public void Raise(object sender, params object[] parameters)
     {
+        CallbackContext context = new CallbackContext(sender, this);
+        context.SetParameters(parameters);
         for(int i = _listeners.Count - 1; i >= 0; i--)
         {
             _listeners[i].OnEventRaised(context);
@@ -27,52 +36,109 @@ public class GameEvent : ScriptableGameObject
         _listeners.Remove(listener);
     }
 
+    public IReadOnlyList<(string Name, Type Type)> GetContextSignature()
+    {
+        if(_context == null )
+        {
+            List<(string Name, Type Type)> output = new();
+            foreach (var contextVariable in _contextVariables)
+            {
+                Type type = System.Type.GetType(contextVariable.Type, false, true);
+                if (type == null)
+                    throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
+                output.Add((contextVariable.Name, type));
+            };
+            _context = output;
+        }
+        return _context;
+    }
+
+    private void OnValidate()
+    {
+#if UNITY_EDITOR
+        ClearConsole();
+        _context = null;
+        foreach (var contextVariable in _contextVariables)
+        {
+            Type type = System.Type.GetType(contextVariable.Type, false, true);
+            if (type == null)
+                throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
+        }
+
+        EventListener[] listeners = GameObject.FindObjectsByType<EventListener>(FindObjectsSortMode.None);
+        foreach (var listener in listeners)
+            listener.OnValidate();
+
+        static void ClearConsole()
+        {
+            var assembly = Assembly.GetAssembly(typeof(SceneView));
+            var type = assembly.GetType("UnityEditor.LogEntries");
+            var method = type.GetMethod("Clear");
+            method.Invoke(new object(), null);
+
+        }
+#endif
+    }
+
+    [Serializable] public struct ContextVariable
+    {
+        [Delayed] public string Name;
+        [Delayed] public string Type;
+    }
 
     public class CallbackContext
     {
-        private readonly object _sender; 
-        private readonly (string name, object value)[] _values;
+        private object _sender;
+        private object[] _parameters;
+        private GameEvent _gameEvent;
 
         public object Sender => _sender;
+        public object[] Parameters => _parameters;
 
-        public CallbackContext(object sender, params (string name, object value)[] values)
+        public CallbackContext(object sender, GameEvent gameEvent)
         {
-            _sender = sender; 
-            _values = values;
+            _sender = sender;
+            _gameEvent = gameEvent;
+            _parameters = new object[gameEvent.GetContextSignature().Count];
         }
 
-        /// <summary>Finds the first value that matches the type T.</summary>
-        /// <returns>True, if value found, otherwise false.</returns>
-        public bool ReadValue<T>(out T value)
+        public bool SetParameters(params object[] parameters)
         {
-            for(int i = 0; i < _values.Length; i++)
+            Exception exception = new Exception(
+                $"Cannot Raise GameEvent {_gameEvent.name}:" +
+                $" Parameters '({string.Join(",", parameters)})' do not match the event signature '({string.Join(",", _gameEvent.GetContextSignature())})'.");
+            if (parameters.Length != _parameters.Length)
+                throw exception;
+
+            for (int i = 0; i < parameters.Length; i++)
             {
-                if(_values[i].value is T)
+                if (parameters[i].GetType() == _gameEvent.GetContextSignature()[i].Type)
                 {
-                    value = (T)(_values[i].value);
-                    return true;
+                    _parameters[i] = parameters[i];
+                }
+                else
+                {
+                    throw exception;
                 }
             }
-
-            value = default;
-            return false;
+            return true;
         }
 
-        /// <summary>Finds the first named value that matches the type T.</summary>
-        /// <returns>True, if value found, otherwise false.</returns>
-        public bool ReadValue<T>(string name, out T value)
+        [MustMatchEventSignature]
+        public T Get<T>(int index)
         {
-            for (int i = 0; i < _values.Length; i++)
-            {
-                if (_values[i].name == name && _values[i].value is T)
-                {
-                    value = (T)(_values[i].value);
-                    return true;
-                }
-            }
+            return (T) _parameters[index];
+        }
 
-            value = default;
-            return false;
+        [MustMatchEventSignature]
+        public T Get<T>()
+        {
+            foreach (var item in _parameters)
+            {
+                if (item is T)
+                    return (T)item;
+            }
+            return default;
         }
     }
 }
