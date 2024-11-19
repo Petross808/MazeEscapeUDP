@@ -2,19 +2,30 @@ using UnityEngine;
 
 public class PauseStateScript : MonoBehaviour
 {
-    private bool _isPaused;
-
+    [SerializeField] private bool _isPaused;
     [SerializeField] private GameEvent _onPauseStateChangedEvent;
 
-    public void TogglePause()
+    private void Awake()
     {
-        if (_isPaused)
-            ResumeGame();
-        else
-            PauseGame();
+        this.EnsureSingleInstance();
     }
 
-    public void PauseGame()
+    private void Start()
+    {
+        _onPauseStateChangedEvent.Raise(this, _isPaused);
+    }
+
+    [EventSignature]
+    public void TogglePause(GameEvent.CallbackContext context)
+    {
+        if (_isPaused)
+            ResumeGame(context);
+        else
+            PauseGame(context);
+    }
+
+    [EventSignature]
+    public void PauseGame(GameEvent.CallbackContext context)
     {
         if (_isPaused)
             return;
@@ -24,7 +35,8 @@ public class PauseStateScript : MonoBehaviour
         _onPauseStateChangedEvent.Raise(this, true);
     }
 
-    public void ResumeGame()
+    [EventSignature]
+    public void ResumeGame(GameEvent.CallbackContext context)
     {
         if (!_isPaused)
             return;
