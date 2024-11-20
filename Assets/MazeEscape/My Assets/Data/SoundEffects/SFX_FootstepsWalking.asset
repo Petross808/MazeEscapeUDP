@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
+  m_Name: SFX_FootstepsWalking
+  m_EditorClassIdentifier: 
+  _editorName: Footsteps Walking
+  _editorDescription: Player footstep sound when walking.
+  _pickAtRandom: 1
+  _diegetic: 1
+  _isMusicTrack: 0
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: 0ce06792d81e33d42a19cf0b61bcb345, type: 3}
+  - {fileID: 8300000, guid: 12e113fc95b4e1a4999eb48cd7fbc9b8, type: 3}
+  - {fileID: 8300000, guid: 998e5e31bda153a45897cad6299edc6d, type: 3}
+  - {fileID: 8300000, guid: edfcee376104c824b9bc22298146114b, type: 3}
+  - {fileID: 8300000, guid: 344021ef086c50843accee3d70119916, type: 3}
+  - {fileID: 8300000, guid: 66ef4f49e6430794896a36d9a0852740, type: 3}
+  - {fileID: 8300000, guid: edfd6487ffcc2964d85bef434fdb9123, type: 3}
+  - {fileID: 8300000, guid: d4736986846f3264882fb8e643b3e7d2, type: 3}

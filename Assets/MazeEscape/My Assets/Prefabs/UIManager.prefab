@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1411886251947873458}
   - component: {fileID: 6202174915100404604}
   - component: {fileID: 6369830408459457996}
+  - component: {fileID: 5382970388408239014}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -78,6 +79,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5382970388408239014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001128043953442003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls: []
+  _soundEffect: {fileID: 11400000, guid: 55fb44b244d66e34eb26557908b9e013, type: 2}
+  _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
+    type: 2}
 --- !u!1 &4442385857275631026
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +183,8 @@ MonoBehaviour:
   _onPlayButtonClickedEvent: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb,
     type: 2}
   _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
+    type: 2}
+  _onButtonClickEvent: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad,
     type: 2}
 --- !u!114 &2763538524256293164
 MonoBehaviour:
@@ -303,6 +325,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
+    type: 2}
+  _onMasterVolumeSliderChange: {fileID: 11400000, guid: 2bf7f67512e5c6645bcacb6534f30f79,
+    type: 2}
+  _onMusicVolumeSliderChange: {fileID: 11400000, guid: 90c68f97fd7228f448c441e5ca3e3849,
+    type: 2}
+  _onSFXVolumeSliderChange: {fileID: 11400000, guid: 068909874c22ec04ebe3032b76fac579,
+    type: 2}
+  _onButtonClickEvent: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad,
     type: 2}
 --- !u!114 &1443180815990351144
 MonoBehaviour:
@@ -571,7 +601,8 @@ MonoBehaviour:
     type: 2}
   _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
     type: 2}
-  _uiPanelScript: {fileID: 3708967682198985878}
+  _onButtonClickEvent: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad,
+    type: 2}
 --- !u!114 &4760174800456919363
 MonoBehaviour:
   m_ObjectHideFlags: 0

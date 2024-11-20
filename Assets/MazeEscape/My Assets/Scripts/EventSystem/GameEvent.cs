@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/GameEvent", order = 1)]
 public class GameEvent : ScriptableGameObject
 {
-    private List<EventListener> _listeners = new();
+    private List<EventListenerBase> _listeners = new();
 
 #if UNITY_EDITOR
     [SerializeField] private bool _debugLog;
@@ -35,7 +35,7 @@ public class GameEvent : ScriptableGameObject
         DebugLog("Raise", parameters);
     }
 
-    public void RegisterListener(EventListener listener)
+    public void RegisterListener(EventListenerBase listener)
     {
         if (!_listeners.Contains(listener))
         {
@@ -44,7 +44,7 @@ public class GameEvent : ScriptableGameObject
         DebugLog("Register", listener);
     }
 
-    public void UnregisterListener(EventListener listener)
+    public void UnregisterListener(EventListenerBase listener)
     {
         _listeners.Remove(listener);
         DebugLog("Unregister", listener);

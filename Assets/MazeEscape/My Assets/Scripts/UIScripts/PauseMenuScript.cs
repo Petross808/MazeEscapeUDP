@@ -9,6 +9,7 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameEvent _onMenuButtonClickedEvent;
     [SerializeField] GameEvent _onSettingsToggleEvent;
+    [SerializeField] GameEvent _onButtonClickEvent;
     private UiPanelScript _uiPanelScript;
 
     private UIDocument _document;
@@ -17,7 +18,6 @@ public class PauseMenuScript : MonoBehaviour
     private Button _homeButton;
 
     private List<Button> _menuButtons = new List<Button>();
-    //private AudioSource _audioSource;
 
     void Awake()
     {
@@ -31,8 +31,6 @@ public class PauseMenuScript : MonoBehaviour
        
         _homeButton = _document.rootVisualElement.Q<Button>("HomeButton");
         _homeButton.RegisterCallback<ClickEvent>(OpenMainMenu);
-
-        //_audioSource = GetComponent<AudioSource>();
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < _menuButtons.Count; i++)
@@ -70,6 +68,6 @@ public class PauseMenuScript : MonoBehaviour
 
     private void OnAllButtonsClick(ClickEvent evt)
     {
-        //_audioSource.Play();
+        _onButtonClickEvent.Raise(this);
     }
 }
