@@ -9,6 +9,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     [SerializeField] private GameObject _pawn;
     [SerializeField] private GameEvent _onPauseTogglePressed;
+    [SerializeField] private GameEvent _onEscapeMenuPressed;
 
     private IControllable _controllableScript;
     private CameraScript _cameraScript;
@@ -63,12 +64,12 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void RegisterMenuControls()
     {
-        _input.actions["Pause"].performed += OnPauseToggle;
+        _input.actions["Pause"].performed += OnEscapeMenuPressed;
     }
 
     private void UnRegisterMenuControls()
     {
-        _input.actions["Pause"].performed += OnPauseToggle;
+        _input.actions["Pause"].performed += OnEscapeMenuPressed;
     }
 
     [EventSignature(typeof(bool))]
@@ -127,6 +128,11 @@ public class PlayerControllerScript : MonoBehaviour
     private void OnPauseToggle(InputAction.CallbackContext context)
     {
         _onPauseTogglePressed?.Raise(this);
+    }
+
+    private void OnEscapeMenuPressed(InputAction.CallbackContext context)
+    {
+        _onEscapeMenuPressed?.Raise(this);
     }
 
 }
