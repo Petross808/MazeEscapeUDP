@@ -18,9 +18,17 @@ public class HealthScript : MonoBehaviour
     public int CurrentHealth => _currentHealth;
     public bool IsAlive => _alive;
 
-    public void Start()
+    public void Awake()
     {
         _currentHealth = _maxHealth;
+        if (_currentHealth > 0)
+            _alive = true;
+    }
+
+    public void SetRawHealth(int value)
+    {
+        _currentHealth = value;
+        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
         if (_currentHealth > 0)
             _alive = true;
     }
@@ -60,14 +68,14 @@ public class HealthScript : MonoBehaviour
         _onHealEvent?.Raise(this, delta);
     }
 
-    [EventSignature(typeof(GameObject), typeof(int))]
+    [EventSignature(typeof(GameObject))]
     public void TryTakeDamage(GameEvent.CallbackContext context)
     {
         GameObject objectToTakeDamage = context.Get<GameObject>();
+
         if (objectToTakeDamage == this.gameObject)
         {
-            int damage = context.Get<int>();
-            TakeDamage(damage);
+            TakeDamage(1);
         }
     }
 }
