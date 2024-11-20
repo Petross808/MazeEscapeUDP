@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5795891087075075149}
   - component: {fileID: 3390841625760782155}
   - component: {fileID: 7526594223199289566}
-  - component: {fileID: 6348630345794418670}
   m_Layer: 0
   m_Name: PauseState
   m_TagString: Untagged
@@ -61,41 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: ddc248cc8d594c8499fa48d112a36ec6, type: 2}
+  _listeningTo: {fileID: 11400000, guid: ddf7435ef38f54641bb5eb9ccdfb1b3a, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3390841625760782155}
         m_TargetAssemblyTypeName: PauseStateScript, Assembly-CSharp
-        m_MethodName: TogglePause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6348630345794418670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8610937312693622482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: bf9de4fe7ed5fdd489cf00b205b554e4, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3390841625760782155}
-        m_TargetAssemblyTypeName: PauseStateScript, Assembly-CSharp
-        m_MethodName: ResumeGame
+        m_MethodName: SetPause
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

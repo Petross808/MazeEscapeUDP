@@ -15,13 +15,14 @@ public class PauseStateScript : MonoBehaviour
         _onPauseStateChangedEvent.Raise(this, _isPaused);
     }
 
-    [EventSignature]
-    public void TogglePause(GameEvent.CallbackContext context)
+    [EventSignature(typeof(bool))]
+    public void SetPause(GameEvent.CallbackContext context)
     {
-        if (_isPaused)
-            ResumeGame(context);
-        else
+        bool newPauseState = context.Get<bool>();
+        if (newPauseState)
             PauseGame(context);
+        else
+            ResumeGame(context);
     }
 
     [EventSignature]

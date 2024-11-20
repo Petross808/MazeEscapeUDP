@@ -49,6 +49,8 @@ MonoBehaviour:
   _pawn: {fileID: 0}
   _onPauseTogglePressed: {fileID: 11400000, guid: ddc248cc8d594c8499fa48d112a36ec6,
     type: 2}
+  _onEscapeMenuPressed: {fileID: 11400000, guid: 3d18f140522a9ea45bb20695b55548fd,
+    type: 2}
 --- !u!114 &6526311527085420223
 MonoBehaviour:
   m_ObjectHideFlags: 0
