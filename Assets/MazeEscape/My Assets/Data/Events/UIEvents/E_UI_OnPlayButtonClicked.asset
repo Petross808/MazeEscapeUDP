@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _editorName: OnPlayButtonClicked
   _editorDescription: Raised when the play button is clicked.
-  _debugLog: 1
+  _debugLog: 0
   _contextVariables: []
