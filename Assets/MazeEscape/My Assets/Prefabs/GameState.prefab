@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3267681082584340118}
   - component: {fileID: 4527528825529303243}
   - component: {fileID: 8415283475820347848}
+  - component: {fileID: 8367699648637417346}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -49,6 +50,8 @@ MonoBehaviour:
   _onGameStartedEvent: {fileID: 11400000, guid: 167dd4af9a7bb794db83484ef5d70d0d,
     type: 2}
   _onMainMenuOpenedEvent: {fileID: 11400000, guid: 2bce15325f0ac9f46a002fab7ceb3d01,
+    type: 2}
+  _onCheckpointSaveEvent: {fileID: 11400000, guid: 3264e45c0c665de46a2f4a29877d011f,
     type: 2}
 --- !u!114 &4527528825529303243
 MonoBehaviour:
@@ -97,6 +100,34 @@ MonoBehaviour:
       - m_Target: {fileID: 3267681082584340118}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
         m_MethodName: OpenMainMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8367699648637417346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497963717713764315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 0340d8c4b806f7c4e9ec1c1fba35d616, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3267681082584340118}
+        m_TargetAssemblyTypeName: GameState, Assembly-CSharp
+        m_MethodName: CheckpointSave
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
