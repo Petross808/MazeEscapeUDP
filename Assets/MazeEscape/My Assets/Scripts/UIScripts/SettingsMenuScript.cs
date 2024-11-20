@@ -7,15 +7,17 @@ using UnityEngine.UIElements;
 
 public class SettingsMenuScript : MonoBehaviour
 {
+    [SerializeField] GameEvent _onSettingsToggleEvent;
+
     private UIDocument _document;
     private Button _quitButton;
-    private AudioSource _audioSource;
+    //private AudioSource _audioSource;
     private Slider _masterSlider;
     private Slider _musicSlider;
     private Slider _sfxSlider;
     void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        //_audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
         _quitButton = _document.rootVisualElement.Q<Button>("Quit");
         _quitButton.RegisterCallback<ClickEvent>(CloseSettings);
@@ -32,8 +34,8 @@ public class SettingsMenuScript : MonoBehaviour
 
     private void CloseSettings(ClickEvent evt)
     {
-        _audioSource.Play();
-        Debug.Log("Close Settings");
+        //_audioSource.Play();
+        _onSettingsToggleEvent.Raise(this, false);
     }
 
     private void OnDestroy()

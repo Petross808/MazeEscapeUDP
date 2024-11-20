@@ -4,18 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(UIDocument)), RequireComponent(typeof(UiPanelScript))]
 public class PauseMenuScript : MonoBehaviour
 {
+    [SerializeField] GameEvent _onMenuButtonClickedEvent;
+    [SerializeField] GameEvent _onSettingsToggleEvent;
+    private UiPanelScript _uiPanelScript;
+
     private UIDocument _document;
     private Button _resumeButton;
     private Button _settingsButton;
     private Button _homeButton;
 
     private List<Button> _menuButtons = new List<Button>();
-    private AudioSource _audioSource;
+    //private AudioSource _audioSource;
 
     void Awake()
     {
+        _uiPanelScript = GetComponent<UiPanelScript>();
         _document = GetComponent<UIDocument>();
         _resumeButton = _document.rootVisualElement.Q<Button>("ResumeButton");
         _resumeButton.RegisterCallback<ClickEvent>(ResumeGame);
@@ -26,7 +32,7 @@ public class PauseMenuScript : MonoBehaviour
         _homeButton = _document.rootVisualElement.Q<Button>("HomeButton");
         _homeButton.RegisterCallback<ClickEvent>(OpenMainMenu);
 
-        _audioSource = GetComponent<AudioSource>();
+        //_audioSource = GetComponent<AudioSource>();
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < _menuButtons.Count; i++)
@@ -37,17 +43,17 @@ public class PauseMenuScript : MonoBehaviour
 
     private void OpenMainMenu(ClickEvent evt)
     {
-        Debug.Log("Open Main Menu");
+        _onMenuButtonClickedEvent.Raise(this);
     }
 
     private void OpenSettings(ClickEvent evt)
     {
-        Debug.Log("Open Settings");
+        _onSettingsToggleEvent.Raise(this, true);
     }
 
     private void ResumeGame(ClickEvent evt)
     {
-        Debug.Log("Resume Game");
+        _uiPanelScript.Close(new());
     }
 
     private void OnDestroy()
@@ -64,6 +70,6 @@ public class PauseMenuScript : MonoBehaviour
 
     private void OnAllButtonsClick(ClickEvent evt)
     {
-        _audioSource.Play();
+        //_audioSource.Play();
     }
 }
