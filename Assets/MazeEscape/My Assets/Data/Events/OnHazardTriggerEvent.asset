@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
-  m_Name: OnSoundPlayRequest
+  m_Name: OnHazardTriggerEvent
   m_EditorClassIdentifier: 
-  _editorName: OnSoundPlayRequest
-  _editorDescription: Raised when any object wants to play a sound effect at a position.
+  _editorName: OnHazardTriggerEvent
+  _editorDescription: Raised when any hazard is triggered.
   _debugLog: 0
   _contextVariables:
-  - Name: SoundEffect
-    Type: GameSoundEffect
-  - Name: Position
-    Type: UnityEngine.Vector3, UnityEngine.CoreModule
+  - Name: TriggeredBy
+    Type: UnityEngine.GameObject, UnityEngine.CoreModule
+  - Name: HazardPower
+    Type: System.Int32
