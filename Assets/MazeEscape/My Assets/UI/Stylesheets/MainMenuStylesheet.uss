@@ -1,0 +1,37 @@
+.header {
+    font-size: 133px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Fonts/WARTORN.ttf?fileID=12800000&guid=dbea26902f738e54ab137580285d918a&type=3#WARTORN");
+    justify-content: flex-start;
+    align-items: auto;
+    align-self: center;
+    top: 20%;
+}
+
+.button {
+    font-size: 50px;
+    width: 25%;
+    height: 13%;
+    align-self: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-image: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Buttons/RectButton.png?fileID=21300000&guid=57e7292bc3628eb49a822b6d3b16f584&type=3#RectButton");
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-font-definition: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Fonts/WARTORN.ttf?fileID=12800000&guid=dbea26902f738e54ab137580285d918a&type=3#WARTORN");
+    -unity-text-align: middle-center;
+    text-overflow: clip;
+    transition-duration: 0.35s;
+}
+
+.button:hover {
+    scale: 1.1 1.1;
+    background-image: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Buttons/RectButtonHighlight.png?fileID=2800000&guid=dc238d5ce80c2e148b4c23c170aa9483&type=3#RectButtonHighlight");
+    -unity-background-image-tint-color: rgb(255, 136, 0);
+}
+
+.button:active {
+    background-image: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Buttons/RectButtonPressed.png?fileID=2800000&guid=982207fddad6a0246b9c055fde811de2&type=3#RectButtonPressed");
+}
