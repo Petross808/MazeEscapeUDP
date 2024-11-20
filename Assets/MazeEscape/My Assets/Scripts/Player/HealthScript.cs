@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class HealthScript : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
@@ -57,5 +58,16 @@ public class HealthScript : MonoBehaviour
         delta = _currentHealth - delta;
 
         _onHealEvent?.Raise(this, delta);
+    }
+
+    [EventSignature(typeof(GameObject), typeof(int))]
+    public void TryTakeDamage(GameEvent.CallbackContext context)
+    {
+        GameObject objectToTakeDamage = context.Get<GameObject>();
+        if (objectToTakeDamage == this.gameObject)
+        {
+            int damage = context.Get<int>();
+            TakeDamage(damage);
+        }
     }
 }
