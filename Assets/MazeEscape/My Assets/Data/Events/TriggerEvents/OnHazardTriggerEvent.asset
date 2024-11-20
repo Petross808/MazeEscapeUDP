@@ -18,5 +18,3 @@ MonoBehaviour:
   _contextVariables:
   - Name: TriggeredBy
     Type: UnityEngine.GameObject, UnityEngine.CoreModule
-  - Name: HazardPower
-    Type: System.Int32

@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
 {
     [SerializeField] GameEvent _onGameStartedEvent;
     [SerializeField] GameEvent _onMainMenuOpenedEvent;
+    [SerializeField] GameEvent _onCheckpointSaveEvent;
 
     private void Awake()
     {
@@ -28,4 +29,11 @@ public class GameState : MonoBehaviour
     {
         _onMainMenuOpenedEvent?.Raise(this);
     }
+
+    [EventSignature(typeof(GameObject))]
+    public void CheckpointSave(GameEvent.CallbackContext context)
+    {
+        _onCheckpointSaveEvent?.Raise(this);
+    }
+
 }
