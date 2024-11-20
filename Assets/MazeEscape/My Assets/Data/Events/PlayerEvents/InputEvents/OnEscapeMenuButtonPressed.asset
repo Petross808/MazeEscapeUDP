@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
-  m_Name: OnResumeButtonClicked
+  m_Name: OnEscapeMenuButtonPressed
   m_EditorClassIdentifier: 
-  _editorName: OnResumeButtonClicked
-  _editorDescription: Raised when the resume button is clicked.
+  _editorName: OnEscapeMenuButton
+  _editorDescription: Raise when the escape button is pressed in menu state.
   _debugLog: 0
   _contextVariables: []
