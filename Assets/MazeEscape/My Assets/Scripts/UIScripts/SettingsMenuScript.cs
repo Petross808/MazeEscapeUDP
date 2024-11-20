@@ -8,16 +8,18 @@ using UnityEngine.UIElements;
 public class SettingsMenuScript : MonoBehaviour
 {
     [SerializeField] GameEvent _onSettingsToggleEvent;
+    [SerializeField] GameEvent _onMasterVolumeSliderChange;
+    [SerializeField] GameEvent _onMusicVolumeSliderChange;
+    [SerializeField] GameEvent _onSFXVolumeSliderChange;
+    [SerializeField] GameEvent _onButtonClickEvent;
 
     private UIDocument _document;
     private Button _quitButton;
-    //private AudioSource _audioSource;
     private Slider _masterSlider;
     private Slider _musicSlider;
     private Slider _sfxSlider;
     void Awake()
     {
-        //_audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
         _quitButton = _document.rootVisualElement.Q<Button>("Quit");
         _quitButton.RegisterCallback<ClickEvent>(CloseSettings);
@@ -34,7 +36,7 @@ public class SettingsMenuScript : MonoBehaviour
 
     private void CloseSettings(ClickEvent evt)
     {
-        //_audioSource.Play();
+        _onButtonClickEvent.Raise(this);
         _onSettingsToggleEvent.Raise(this, false);
     }
 
@@ -48,17 +50,17 @@ public class SettingsMenuScript : MonoBehaviour
 
     private void OnMasterVolumeChange(float value)
     {
-        Debug.Log("Master Volume: " + value);
+        _onMasterVolumeSliderChange.Raise(this, value/100);
     }
 
     private void OnMusicVolumeChange(float value)
     {
-        Debug.Log("Music Volume: " + value);
+        _onMusicVolumeSliderChange.Raise(this, value / 100);
     }
 
     private void OnSFXVolumeChange(float value)
     {
-        Debug.Log("SFX Volume: " + value);
+        _onSFXVolumeSliderChange.Raise(this, value / 100);
     }
 
 }

@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameEvent _onPlayButtonClickedEvent;
     [SerializeField] GameEvent _onSettingsToggleEvent;
+    [SerializeField] GameEvent _onButtonClickEvent;
 
     private UIDocument _document;
     private Button _playButton;
@@ -15,11 +16,9 @@ public class MainMenuScript : MonoBehaviour
     private Button _quitButton;
 
     private List<Button> _menuButtons = new List<Button>();
-    //private AudioSource _audioSource;
 
     private void Awake()
     {
-        //_audioSource = GetComponent<AudioSource>();
         _document = GetComponent<UIDocument>();
         _playButton = _document.rootVisualElement.Q<Button>("PlayButton");
         _playButton.RegisterCallback<ClickEvent>(PlayGame);
@@ -53,7 +52,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void OnAllButtonsClick(ClickEvent evt)
     {
-       //_audioSource.Play();
+        _onButtonClickEvent.Raise(this);
     }
 
     private void OnDestroy()
