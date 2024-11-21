@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85faa72e2f5b0441976d5163d6b425f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
+  _maxHealth: 1
   _onDamageEvent: {fileID: 11400000, guid: cadb6bdabc551934c925a39f16daa9d1, type: 2}
   _onDeathEvent: {fileID: 11400000, guid: 6d8740d6e5ec2d4428cd1def156c89ab, type: 2}
   _onHealEvent: {fileID: 11400000, guid: 1c7a546ce94fd0e45a5f022c24401ac8, type: 2}
@@ -300,8 +300,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 3
+  m_Radius: 0.75
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6486889768876713765
@@ -418,6 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 9215190223439952387}
   _cameraSensitivity: {x: 0.2, y: 0.2}
+  _maxVerticalAngle: 62
 --- !u!114 &7633119153281101090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +441,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7839841866121523076}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.5
   m_Speed: 1
   m_Acceleration: 10
   avoidancePriority: 50
@@ -480,7 +481,7 @@ Transform:
   m_GameObject: {fileID: 9137610141359929993}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
