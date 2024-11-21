@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Rendering;
 
 public class SaveLoadScript : MonoBehaviour
@@ -22,6 +23,18 @@ public class SaveLoadScript : MonoBehaviour
         foreach (var toSave in healthScripts)
         {
             _savedData.Add(new HealthSave(toSave));
+        }
+
+        NavMeshAgent[] agents = FindObjectsByType<NavMeshAgent>(FindObjectsSortMode.None);
+        foreach (var toSave in agents)
+        {
+            _savedData.Add(new AgentSave(toSave));
+        }
+
+        ScarecrowAIScript[] scarecrowAi = FindObjectsByType<ScarecrowAIScript>(FindObjectsSortMode.None);
+        foreach (var toSave in scarecrowAi)
+        {
+            _savedData.Add(new ScarecrowAISave(toSave));
         }
     }
 
@@ -116,6 +129,64 @@ public class SaveLoadScript : MonoBehaviour
         public void ResetInit()
         {
             SavedHealth = InitalHealth;
+            Load();
+        }
+    }
+
+    struct AgentSave : ISaveable
+    {
+        public NavMeshAgent SavedAgent;
+        public Vector3 InitialPosition;
+        public Vector3 SavedPosition;
+        public Quaternion InitialRotation;
+        public Quaternion SavedRotation;
+
+        public AgentSave(NavMeshAgent toSave)
+        {
+            SavedAgent = toSave;
+            InitialPosition = SavedAgent.nextPosition;
+            SavedPosition = SavedAgent.nextPosition;
+            InitialRotation = SavedAgent.gameObject.transform.rotation;
+            SavedRotation = SavedAgent.gameObject.transform.rotation;
+        }
+
+        public void Save()
+        {
+            SavedPosition = SavedAgent.nextPosition;
+            SavedRotation = SavedAgent.gameObject.transform.rotation;
+        }
+
+        public void Load()
+        {
+            SavedAgent.Warp(SavedPosition);
+            SavedAgent.gameObject.transform.rotation = SavedRotation;
+        }
+        public void ResetInit()
+        {
+            SavedPosition = InitialPosition;
+            SavedRotation = InitialRotation;
+            Load();
+        }
+    }
+
+    struct ScarecrowAISave : ISaveable
+    {
+        public ScarecrowAIScript SavedScript;
+        public bool SavedActive;
+        public bool InitialActive;
+
+        public ScarecrowAISave(ScarecrowAIScript toSave)
+        {
+            SavedScript = toSave;
+            InitialActive = toSave.Activated;
+            SavedActive = toSave.Activated;
+        }
+
+        public void Save() => SavedActive = SavedScript.Activated;
+        public void Load() => SavedScript.Activated = SavedActive;
+        public void ResetInit()
+        {
+            SavedActive = InitialActive;
             Load();
         }
     }
