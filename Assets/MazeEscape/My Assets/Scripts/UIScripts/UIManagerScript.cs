@@ -33,6 +33,15 @@ public class UIManager : MonoBehaviour
         topmost.Close(context);
     }
 
+    [EventSignature]
+    public void ForceCloseAll(GameEvent.CallbackContext context)
+    {
+        foreach (UiPanelScript script in _uiScripts)
+        {
+            script.Close(context);
+        }
+    }
+
     public void OnUIChanged()
     {
         foreach(UiPanelScript script in _uiScripts)

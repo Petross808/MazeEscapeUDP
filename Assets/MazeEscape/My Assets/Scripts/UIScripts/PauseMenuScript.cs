@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] GameEvent _onMenuButtonClickedEvent;
-    [SerializeField] GameEvent _onSettingsToggleEvent;
+    [SerializeField] GameEvent _onSettingsButtonClickedEvent;
     [SerializeField] GameEvent _onButtonClickEvent;
     private UiPanelScript _uiPanelScript;
 
@@ -46,7 +46,7 @@ public class PauseMenuScript : MonoBehaviour
 
     private void OpenSettings(ClickEvent evt)
     {
-        _onSettingsToggleEvent.Raise(this, true);
+        _onSettingsButtonClickedEvent.Raise(this);
     }
 
     private void ResumeGame(ClickEvent evt)

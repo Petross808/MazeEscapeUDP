@@ -83,17 +83,31 @@ public class AudioSystemScript : MonoBehaviour
     public void SetMasterVolume(GameEvent.CallbackContext context)
     {
         _masterVolume = context.Get<float>();
+        UpdateVolume();
     }
 
     [EventSignature(typeof(float))]
     public void SetSFXVolume(GameEvent.CallbackContext context)
     {
         _sfxVolume = context.Get<float>();
+        UpdateVolume();
     }
 
     [EventSignature(typeof(float))]
     public void SetMusicVolume(GameEvent.CallbackContext context)
     {
         _musicVolume = context.Get<float>();
+        UpdateVolume();
+    }
+
+    private void UpdateVolume()
+    {
+        foreach (var audioSource in _audioSourcePool)
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.volume = _masterVolume * (audioSource.loop ? _musicVolume : _sfxVolume);
+            }
+        }
     }
 }
