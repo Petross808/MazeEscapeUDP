@@ -18,4 +18,4 @@ MonoBehaviour:
   _diegetic: 0
   _isMusicTrack: 0
   _soundEffectVariants:
-  - {fileID: 8300000, guid: 4f79b20836ce33046a6fe57d6a12f304, type: 3}
+  - {fileID: 8300000, guid: 550df42ccf349cf4cb815730e4260de1, type: 3}
