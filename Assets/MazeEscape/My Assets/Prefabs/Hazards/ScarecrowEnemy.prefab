@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2508414019565631201}
   - component: {fileID: 183183050062532427}
   - component: {fileID: 2974121089717580364}
+  - component: {fileID: 5887949113214252781}
+  - component: {fileID: -8392542649590589871}
   m_Layer: 0
   m_Name: ScarecrowEnemy
   m_TagString: Untagged
@@ -80,6 +82,38 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!114 &5887949113214252781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016926485945542220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 899ed5b5329490d4eb16a6d810daa930, type: 2}
+  _soundEffect: {fileID: 11400000, guid: 9729e401700ee0f42855af3aed96bdfd, type: 2}
+  _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
+    type: 2}
+--- !u!114 &-8392542649590589871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016926485945542220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 0ba533121c6e95a4cb8813860a2331fb, type: 2}
+  _soundEffect: {fileID: 11400000, guid: 3b935ff2a3f914f45a8bd7ea7d9b75ec, type: 2}
+  _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
+    type: 2}
 --- !u!1 &7520781255329402488
 GameObject:
   m_ObjectHideFlags: 0
