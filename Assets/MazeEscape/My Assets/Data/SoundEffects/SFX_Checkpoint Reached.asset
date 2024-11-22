@@ -15,6 +15,7 @@ MonoBehaviour:
   _editorName: 
   _editorDescription: 
   _pickAtRandom: 1
-  _diegetic: 1
+  _diegetic: 0
   _isMusicTrack: 0
-  _soundEffectVariants: []
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: e1133434aa82b5343bc4f4f1b31a026b, type: 3}
