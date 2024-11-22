@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] GameEvent _onPlayButtonClickedEvent;
-    [SerializeField] GameEvent _onSettingsToggleEvent;
+    [SerializeField] GameEvent _onSettingsButtonClickedEvent;
     [SerializeField] GameEvent _onButtonClickEvent;
 
     private UIDocument _document;
@@ -43,7 +43,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void OpenSettings(ClickEvent evt)
     {
-        _onSettingsToggleEvent.Raise(this, true);
+        _onSettingsButtonClickedEvent.Raise(this);
     }
     private void QuitGame(ClickEvent evt)
     {

@@ -51,6 +51,8 @@ MonoBehaviour:
     type: 2}
   _onMainMenuOpenedEvent: {fileID: 11400000, guid: 2bce15325f0ac9f46a002fab7ceb3d01,
     type: 2}
+  _onGameStateTransitionEvent: {fileID: 11400000, guid: 09f8dd59b77939443a3f18e06ddff73e,
+    type: 2}
   _onCheckpointSaveEvent: {fileID: 11400000, guid: 3264e45c0c665de46a2f4a29877d011f,
     type: 2}
 --- !u!114 &4527528825529303243

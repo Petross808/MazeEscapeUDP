@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
 {
     [SerializeField] GameEvent _onGameStartedEvent;
     [SerializeField] GameEvent _onMainMenuOpenedEvent;
+    [SerializeField] GameEvent _onGameStateTransitionEvent;
     [SerializeField] GameEvent _onCheckpointSaveEvent;
 
     private void Awake()
@@ -21,12 +22,14 @@ public class GameState : MonoBehaviour
     [EventSignature]
     public void PlayGame(GameEvent.CallbackContext _)
     {
+        _onGameStateTransitionEvent?.Raise(this);
         _onGameStartedEvent?.Raise(this);
     }
 
     [EventSignature]
     public void OpenMainMenu(GameEvent.CallbackContext _)
     {
+        _onGameStateTransitionEvent?.Raise(this);
         _onMainMenuOpenedEvent?.Raise(this);
     }
 

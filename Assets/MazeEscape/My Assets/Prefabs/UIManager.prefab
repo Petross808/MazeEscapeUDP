@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1411886251947873458}
   - component: {fileID: 6202174915100404604}
   - component: {fileID: 6369830408459457996}
+  - component: {fileID: 4156060102625420476}
   - component: {fileID: 5382970388408239014}
   m_Layer: 0
   m_Name: UIManager
@@ -79,6 +80,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4156060102625420476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001128043953442003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 09f8dd59b77939443a3f18e06ddff73e, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6202174915100404604}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ForceCloseAll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5382970388408239014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,9 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listeningTo: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls: []
   _soundEffect: {fileID: 11400000, guid: 55fb44b244d66e34eb26557908b9e013, type: 2}
   _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
     type: 2}
@@ -111,7 +137,6 @@ GameObject:
   - component: {fileID: 3578237085550328854}
   - component: {fileID: 8711175330610916947}
   - component: {fileID: 2763538524256293164}
-  - component: {fileID: 31215121951388844}
   m_Layer: 0
   m_Name: MenuUi
   m_TagString: Untagged
@@ -182,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onPlayButtonClickedEvent: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb,
     type: 2}
-  _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
+  _onSettingsButtonClickedEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
     type: 2}
   _onButtonClickEvent: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad,
     type: 2}
@@ -214,34 +239,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &31215121951388844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4442385857275631026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 167dd4af9a7bb794db83484ef5d70d0d, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3578237085550328854}
-        m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6523688825155818114
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +252,6 @@ GameObject:
   - component: {fileID: 1746225655810564071}
   - component: {fileID: 5222386086368473430}
   - component: {fileID: 1443180815990351144}
-  - component: {fileID: 298114775903806905}
   m_Layer: 0
   m_Name: SettingsUi
   m_TagString: Untagged
@@ -324,8 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e77d5d1a99b7a4b8b968dc977fdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
-    type: 2}
   _onMasterVolumeSliderChange: {fileID: 11400000, guid: 2bf7f67512e5c6645bcacb6534f30f79,
     type: 2}
   _onMusicVolumeSliderChange: {fileID: 11400000, guid: 90c68f97fd7228f448c441e5ca3e3849,
@@ -352,35 +346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1746225655810564071}
         m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
-        m_MethodName: SetOpen
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &298114775903806905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6523688825155818114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 167dd4af9a7bb794db83484ef5d70d0d, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1746225655810564071}
-        m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
-        m_MethodName: Close
+        m_MethodName: Open
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -402,7 +368,6 @@ GameObject:
   - component: {fileID: 9094640981693028303}
   - component: {fileID: 8467267388107489164}
   - component: {fileID: 6016151659428070086}
-  - component: {fileID: 5620305004533967461}
   m_Layer: 0
   m_Name: InGameUi
   m_TagString: Untagged
@@ -487,34 +452,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5620305004533967461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6527648560824138723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 2bce15325f0ac9f46a002fab7ceb3d01, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8467267388107489164}
-        m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
-        m_MethodName: Close
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8828563289142188172
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +465,6 @@ GameObject:
   - component: {fileID: 3708967682198985878}
   - component: {fileID: 4750573316334724419}
   - component: {fileID: 4760174800456919363}
-  - component: {fileID: 6184341284413087403}
   m_Layer: 0
   m_Name: PauseUi
   m_TagString: Untagged
@@ -599,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onMenuButtonClickedEvent: {fileID: 11400000, guid: cbc9191e7e4813d41884e78fe966e1ac,
     type: 2}
-  _onSettingsToggleEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
+  _onSettingsButtonClickedEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
     type: 2}
   _onButtonClickEvent: {fileID: 11400000, guid: 86eec82382070d247bc1e2de74d5a6ad,
     type: 2}
@@ -622,34 +558,6 @@ MonoBehaviour:
       - m_Target: {fileID: 3708967682198985878}
         m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
         m_MethodName: Open
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6184341284413087403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828563289142188172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 167dd4af9a7bb794db83484ef5d70d0d, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3708967682198985878}
-        m_TargetAssemblyTypeName: UiPanelScript, Assembly-CSharp
-        m_MethodName: Close
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

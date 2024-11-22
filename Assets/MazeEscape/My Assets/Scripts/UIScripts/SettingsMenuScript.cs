@@ -7,12 +7,12 @@ using UnityEngine.UIElements;
 
 public class SettingsMenuScript : MonoBehaviour
 {
-    [SerializeField] GameEvent _onSettingsToggleEvent;
     [SerializeField] GameEvent _onMasterVolumeSliderChange;
     [SerializeField] GameEvent _onMusicVolumeSliderChange;
     [SerializeField] GameEvent _onSFXVolumeSliderChange;
     [SerializeField] GameEvent _onButtonClickEvent;
 
+    private UiPanelScript _uiPanelScript;
     private UIDocument _document;
     private Button _quitButton;
     private Slider _masterSlider;
@@ -20,6 +20,7 @@ public class SettingsMenuScript : MonoBehaviour
     private Slider _sfxSlider;
     void Awake()
     {
+        _uiPanelScript = GetComponent<UiPanelScript>();
         _document = GetComponent<UIDocument>();
         _quitButton = _document.rootVisualElement.Q<Button>("Quit");
         _quitButton.RegisterCallback<ClickEvent>(CloseSettings);
@@ -37,7 +38,7 @@ public class SettingsMenuScript : MonoBehaviour
     private void CloseSettings(ClickEvent evt)
     {
         _onButtonClickEvent.Raise(this);
-        _onSettingsToggleEvent.Raise(this, false);
+        _uiPanelScript.Close(new());
     }
 
     private void OnDestroy()
