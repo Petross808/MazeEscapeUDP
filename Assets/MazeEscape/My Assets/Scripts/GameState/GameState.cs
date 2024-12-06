@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    [SerializeField] GameEvent _onGameStartedEvent;
-    [SerializeField] GameEvent _onMainMenuOpenedEvent;
-    [SerializeField] GameEvent _onGameStateTransitionEvent;
-    [SerializeField] GameEvent _onCheckpointSaveEvent;
+    [SerializeField, EventSignature] GameEvent _onGameStartedEvent;
+    [SerializeField, EventSignature] GameEvent _onMainMenuOpenedEvent;
+    [SerializeField, EventSignature] GameEvent _onGameStateTransitionEvent;
+    [SerializeField, EventSignature] GameEvent _onCheckpointSaveEvent;
 
     private void Awake()
     {
@@ -22,21 +22,21 @@ public class GameState : MonoBehaviour
     [EventSignature]
     public void PlayGame(GameEvent.CallbackContext _)
     {
-        _onGameStateTransitionEvent?.Raise(this);
-        _onGameStartedEvent?.Raise(this);
+        _onGameStateTransitionEvent.Raise(this);
+        _onGameStartedEvent.Raise(this);
     }
 
     [EventSignature]
     public void OpenMainMenu(GameEvent.CallbackContext _)
     {
-        _onGameStateTransitionEvent?.Raise(this);
-        _onMainMenuOpenedEvent?.Raise(this);
+        _onGameStateTransitionEvent.Raise(this);
+        _onMainMenuOpenedEvent.Raise(this);
     }
 
     [EventSignature(typeof(GameObject))]
-    public void CheckpointSave(GameEvent.CallbackContext context)
+    public void CheckpointSave(GameEvent.CallbackContext _)
     {
-        _onCheckpointSaveEvent?.Raise(this);
+        _onCheckpointSaveEvent.Raise(this);
     }
 
 }

@@ -9,8 +9,8 @@ public class MovementScript : MonoBehaviour, IControllable
     [SerializeField] private Transform _head;
     [SerializeField] private float _walkHeadOffset;
     [SerializeField] private float _stepDistance;
-    [SerializeField] private GameEvent _onRunStepEvent;
-    [SerializeField] private GameEvent _onWalkStepEvent;
+    [SerializeField, EventSignature] private GameEvent _onRunStepEvent;
+    [SerializeField, EventSignature] private GameEvent _onWalkStepEvent;
 
 
     private NavMeshAgent _agent;

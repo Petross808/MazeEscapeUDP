@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using EventSystemInternal;
 
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/GameEvent", order = 1)]
-public class GameEvent : ScriptableGameObject
+public sealed class GameEvent : ScriptableGameObject
 {
-    private List<EventListenerBase> _listeners = new();
+    private readonly List<EventListenerBase> _listeners = new();
 
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     [SerializeField] private bool _debugLog;
-#endif
+    #endif
+
     private void DebugLog(string message, params object[] values)
     {
     #if UNITY_EDITOR
@@ -24,9 +26,10 @@ public class GameEvent : ScriptableGameObject
 
     private IReadOnlyList<(string Name, Type Type)> _context;
 
+    [MustMatchEventSignatureRaise]
     public void Raise(object sender, params object[] parameters)
     {
-        CallbackContext context = new CallbackContext(sender, this);
+        CallbackContext context = new(sender, this);
         context.SetParameters(parameters);
         for(int i = _listeners.Count - 1; i >= 0; i--)
         {
@@ -57,9 +60,7 @@ public class GameEvent : ScriptableGameObject
             List<(string Name, Type Type)> output = new();
             foreach (var contextVariable in _contextVariables)
             {
-                Type type = System.Type.GetType(contextVariable.Type, false, true);
-                if (type == null)
-                    throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
+                Type type = System.Type.GetType(contextVariable.Type, false, true) ?? throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
                 output.Add((contextVariable.Name, type));
             };
             _context = output;
@@ -69,14 +70,12 @@ public class GameEvent : ScriptableGameObject
 
     private void OnValidate()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         ClearConsole();
         _context = null;
         foreach (var contextVariable in _contextVariables)
         {
-            Type type = System.Type.GetType(contextVariable.Type, false, true);
-            if (type == null)
-                throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
+            Type type = System.Type.GetType(contextVariable.Type, false, true) ?? throw new System.Exception($"GameEvent '{this.name}': '{contextVariable.Type}' is not a valid type.");
         }
 
         EventListener[] listeners = GameObject.FindObjectsByType<EventListener>(FindObjectsSortMode.None);
@@ -91,7 +90,7 @@ public class GameEvent : ScriptableGameObject
             method.Invoke(new object(), null);
 
         }
-#endif
+        #endif
     }
 
     [Serializable] public struct ContextVariable
@@ -100,11 +99,11 @@ public class GameEvent : ScriptableGameObject
         [Delayed] public string Type;
     }
 
-    public struct CallbackContext
+    public readonly struct CallbackContext
     {
-        private object _sender;
-        private object[] _parameters;
-        private GameEvent _gameEvent;
+        private readonly object _sender;
+        private readonly object[] _parameters;
+        private readonly GameEvent _gameEvent;
 
         public object Sender => _sender;
 
@@ -117,7 +116,7 @@ public class GameEvent : ScriptableGameObject
 
         public bool SetParameters(params object[] parameters)
         {
-            Exception exception = new Exception(
+            Exception exception = new(
                 $"Cannot Raise GameEvent {_gameEvent.name}:" +
                 $" Parameters '({string.Join(",", parameters)})' do not match the event signature '({string.Join(",", _gameEvent.GetContextSignature())})'.");
             if (parameters.Length != _parameters.Length)
@@ -137,19 +136,19 @@ public class GameEvent : ScriptableGameObject
             return true;
         }
 
-        [MustMatchEventSignature]
+        [MustMatchEventSignatureGet]
         public T Get<T>(int index)
         {
             return (T) _parameters[index];
         }
 
-        [MustMatchEventSignature]
+        [MustMatchEventSignatureGet]
         public T Get<T>()
         {
             foreach (var item in _parameters)
             {
-                if (item is T)
-                    return (T)item;
+                if (item is T t)
+                    return t;
             }
             return default;
         }

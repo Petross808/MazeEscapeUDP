@@ -7,10 +7,10 @@ using UnityEngine.UIElements;
 
 public class SettingsMenuScript : MonoBehaviour
 {
-    [SerializeField] GameEvent _onMasterVolumeSliderChange;
-    [SerializeField] GameEvent _onMusicVolumeSliderChange;
-    [SerializeField] GameEvent _onSFXVolumeSliderChange;
-    [SerializeField] GameEvent _onButtonClickEvent;
+    [SerializeField, EventSignature(typeof(float))] GameEvent _onMasterVolumeSliderChange;
+    [SerializeField, EventSignature(typeof(float))] GameEvent _onMusicVolumeSliderChange;
+    [SerializeField, EventSignature(typeof(float))] GameEvent _onSFXVolumeSliderChange;
+    [SerializeField, EventSignature] GameEvent _onButtonClickEvent;
 
     private UiPanelScript _uiPanelScript;
     private UIDocument _document;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    [SerializeField] private GameEvent _interactEvent; 
+    [SerializeField, EventSignature] private GameEvent _interactEvent; 
 
     public void OnInteract()
     {
