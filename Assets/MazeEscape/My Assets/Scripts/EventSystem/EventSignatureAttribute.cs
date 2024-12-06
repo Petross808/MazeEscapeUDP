@@ -13,13 +13,11 @@ public class EventSignatureAttribute : PropertyAttribute
     }
 }
 
-namespace EventSystemInternal
-{
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-    public class MustMatchEventSignatureGetAttribute : PropertyAttribute
-    { }
 
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-    public class MustMatchEventSignatureRaiseAttribute : PropertyAttribute
-    { }
-}
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+public class MustMatchEventSignatureGetAttribute : PropertyAttribute
+{ }
+
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+public class MustMatchEventSignatureRaiseAttribute : PropertyAttribute
+{ }

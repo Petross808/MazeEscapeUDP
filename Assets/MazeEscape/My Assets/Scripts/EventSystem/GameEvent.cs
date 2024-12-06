@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using EventSystemInternal;
 
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/GameEvent", order = 1)]
 public sealed class GameEvent : ScriptableGameObject
