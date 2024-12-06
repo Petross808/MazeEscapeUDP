@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _editorName: OnPlayerInteract
   _editorDescription: Raised when the player does the interact action.
-  _contextVariables: []
+  _debugLog: 0
+  _contextVariables:
+  - Name: Target
+    Type: UnityEngine.GameObject,UnityEngine.CoreModule
+  - Name: HeldItem
+    Type: Item

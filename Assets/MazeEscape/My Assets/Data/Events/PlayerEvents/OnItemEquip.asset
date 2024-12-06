@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
-  m_Name: OnCheckpointTriggerEvent
+  m_Name: OnItemEquip
   m_EditorClassIdentifier: 
-  _editorName: OnCheckpointTriggerEvent
-  _editorDescription: Raised when any checkpoint is triggered.
+  _editorName: 
+  _editorDescription: 
   _debugLog: 0
   _contextVariables:
-  - Name: TriggeredBy
-    Type: UnityEngine.GameObject, UnityEngine.CoreModule
+  - Name: HeldItem
+    Type: Item
