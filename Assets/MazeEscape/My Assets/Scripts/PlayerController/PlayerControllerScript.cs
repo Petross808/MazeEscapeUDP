@@ -8,8 +8,8 @@ public class PlayerControllerScript : MonoBehaviour
     private PlayerInput _input;
 
     [SerializeField] private GameObject _pawn;
-    [SerializeField] private GameEvent _onPauseTogglePressed;
-    [SerializeField] private GameEvent _onEscapeMenuPressed;
+    [SerializeField, EventSignature] private GameEvent _onPauseTogglePressed;
+    [SerializeField, EventSignature] private GameEvent _onEscapeMenuPressed;
 
     private IControllable _controllableScript;
     private CameraScript _cameraScript;
@@ -127,12 +127,12 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void OnPauseToggle(InputAction.CallbackContext context)
     {
-        _onPauseTogglePressed?.Raise(this);
+        _onPauseTogglePressed.Raise(this);
     }
 
     private void OnEscapeMenuPressed(InputAction.CallbackContext context)
     {
-        _onEscapeMenuPressed?.Raise(this);
+        _onEscapeMenuPressed.Raise(this);
     }
 
 }
