@@ -6,16 +6,16 @@ using UnityEngine.UIElements;
 
 public class MainMenuScript : MonoBehaviour
 {
-    [SerializeField] GameEvent _onPlayButtonClickedEvent;
-    [SerializeField] GameEvent _onSettingsButtonClickedEvent;
-    [SerializeField] GameEvent _onButtonClickEvent;
+    [SerializeField, EventSignature] GameEvent _onPlayButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onSettingsButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onButtonClickEvent;
 
     private UIDocument _document;
     private Button _playButton;
     private Button _settingsButton;
     private Button _quitButton;
 
-    private List<Button> _menuButtons = new List<Button>();
+    private List<Button> _menuButtons = new();
 
     private void Awake()
     {

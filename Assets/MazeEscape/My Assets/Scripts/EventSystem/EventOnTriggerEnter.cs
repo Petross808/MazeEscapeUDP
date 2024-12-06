@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class EventOnTriggerEnter : MonoBehaviour
 {
-    [SerializeField] GameEvent _onTriggerEnterEvent;
+    [SerializeField, EventSignature(typeof(GameObject))] GameEvent _onTriggerEnterEvent;
     [SerializeField] LayerMask _targetLayer;
 
     private void OnTriggerEnter(Collider other)

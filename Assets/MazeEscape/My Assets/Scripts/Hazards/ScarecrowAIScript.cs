@@ -12,8 +12,8 @@ public class ScarecrowAIScript : MonoBehaviour
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
 
-    [SerializeField] GameEvent _onActivateEvent;
-    [SerializeField] GameEvent _onUnfreezeEvent;
+    [SerializeField, EventSignature] GameEvent _onActivateEvent;
+    [SerializeField, EventSignature] GameEvent _onUnfreezeEvent;
 
     private NavMeshAgent _agent;
     private float _pathTimer;
@@ -38,7 +38,7 @@ public class ScarecrowAIScript : MonoBehaviour
             if(!_activated)
             {
                 _activated = true;
-                _onActivateEvent?.Raise(this);
+                _onActivateEvent.Raise(this);
             }
             _agent.isStopped = true;
             _unfreezeTimer = 0;
@@ -56,7 +56,7 @@ public class ScarecrowAIScript : MonoBehaviour
             _unfreezeTimer += Time.deltaTime;
             if (_unfreezeTimer >= _unfreezeDelayTime)
             {
-                _onUnfreezeEvent?.Raise(this);
+                _onUnfreezeEvent.Raise(this);
             }
             return;
         }

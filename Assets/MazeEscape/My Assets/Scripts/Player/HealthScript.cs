@@ -7,9 +7,9 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
-    [SerializeField] private GameEvent _onDamageEvent;
-    [SerializeField] private GameEvent _onDeathEvent;
-    [SerializeField] private GameEvent _onHealEvent;
+    [SerializeField, EventSignature(typeof(int))] private GameEvent _onDamageEvent;
+    [SerializeField, EventSignature] private GameEvent _onDeathEvent;
+    [SerializeField, EventSignature(typeof(int))] private GameEvent _onHealEvent;
 
     private int _currentHealth;
     bool _alive;
@@ -43,7 +43,7 @@ public class HealthScript : MonoBehaviour
         _currentHealth = Mathf.Max(0, _currentHealth);
         delta -= _currentHealth;
 
-        _onDamageEvent?.Raise(this, delta);
+        _onDamageEvent.Raise(this, delta);
 
         if (_currentHealth <= 0)
             Die();
@@ -52,7 +52,7 @@ public class HealthScript : MonoBehaviour
     private void Die()
     {
         _alive = false;
-        _onDeathEvent?.Raise(this);
+        _onDeathEvent.Raise(this);
     }
 
     public void HealDamage(int amount)
@@ -65,7 +65,7 @@ public class HealthScript : MonoBehaviour
         _currentHealth = Mathf.Min(_maxHealth, _currentHealth);
         delta = _currentHealth - delta;
 
-        _onHealEvent?.Raise(this, delta);
+        _onHealEvent.Raise(this, delta);
     }
 
     [EventSignature(typeof(GameObject))]

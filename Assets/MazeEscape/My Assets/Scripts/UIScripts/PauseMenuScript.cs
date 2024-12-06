@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument)), RequireComponent(typeof(UiPanelScript))]
 public class PauseMenuScript : MonoBehaviour
 {
-    [SerializeField] GameEvent _onMenuButtonClickedEvent;
-    [SerializeField] GameEvent _onSettingsButtonClickedEvent;
-    [SerializeField] GameEvent _onButtonClickEvent;
+    [SerializeField, EventSignature] GameEvent _onMenuButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onSettingsButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onButtonClickEvent;
     private UiPanelScript _uiPanelScript;
 
     private UIDocument _document;
@@ -17,7 +17,7 @@ public class PauseMenuScript : MonoBehaviour
     private Button _settingsButton;
     private Button _homeButton;
 
-    private List<Button> _menuButtons = new List<Button>();
+    private List<Button> _menuButtons = new();
 
     void Awake()
     {

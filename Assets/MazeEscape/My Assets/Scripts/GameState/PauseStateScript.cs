@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseStateScript : MonoBehaviour
 {
     [SerializeField] private bool _isPaused;
-    [SerializeField] private GameEvent _onPauseStateChangedEvent;
+    [SerializeField, EventSignature(typeof(bool))] private GameEvent _onPauseStateChangedEvent;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class PauseStateScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void PauseGame(GameEvent.CallbackContext context)
+    public void PauseGame(GameEvent.CallbackContext _)
     {
         if (_isPaused)
             return;
@@ -37,7 +37,7 @@ public class PauseStateScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void ResumeGame(GameEvent.CallbackContext context)
+    public void ResumeGame(GameEvent.CallbackContext _)
     {
         if (!_isPaused)
             return;

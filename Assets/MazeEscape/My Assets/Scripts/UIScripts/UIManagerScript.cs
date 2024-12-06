@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameEvent _onUiChanged;
+    [SerializeField, EventSignature(typeof(bool))] private GameEvent _onUiChanged;
 
-    private List<UiPanelScript> _uiScripts = new();
+    private readonly List<UiPanelScript> _uiScripts = new();
     public List<UiPanelScript> UiScripts => _uiScripts;
 
     private void Awake()
