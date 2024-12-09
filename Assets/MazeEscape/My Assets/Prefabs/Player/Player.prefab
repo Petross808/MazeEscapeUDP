@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactEvent: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb, type: 2}
+  _playerHead: {fileID: 9137610141359929993}
   _interactReach: 2
 --- !u!114 &3159608330254496980
 MonoBehaviour:
@@ -448,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raiseOnEquip: {fileID: 11400000, guid: f6b7250ef3392fa499921a01d302fbdc, type: 2}
-  _hand: {fileID: 11400000, guid: 22a137d108add2f488cd8bdaccb121bd, type: 2}
+  _empty: {fileID: -7016548127030333443, guid: 37bc225bfd1fbcd499ae47361df3dcc3, type: 3}
 --- !u!114 &6859700466411381604
 MonoBehaviour:
   m_ObjectHideFlags: 0
