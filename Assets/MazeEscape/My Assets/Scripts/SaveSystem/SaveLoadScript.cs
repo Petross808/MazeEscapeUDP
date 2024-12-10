@@ -8,15 +8,21 @@ using UnityEngine.Rendering;
 
 public class SaveLoadScript : MonoBehaviour
 {
-    [SerializeField] List<Transform> _transformsToSave;
+    [SerializeField] List<Transform> _positionsToSave;
+    [SerializeField] List<Transform> _rotationsToSave;
 
-    private List<ISaveable> _savedData = new();
+    private readonly List<ISaveable> _savedData = new();
 
     private void Start()
     {
-        foreach (var toSave in _transformsToSave)
+        foreach (var toSave in _positionsToSave)
         {
-            _savedData.Add(new TransformSave(toSave));
+            _savedData.Add(new PositionSave(toSave));
+        }
+
+        foreach (var toSave in _rotationsToSave)
+        {
+            _savedData.Add(new RotationSave(toSave));
         }
 
         HealthScript[] healthScripts = FindObjectsByType<HealthScript>(FindObjectsSortMode.None);
@@ -39,7 +45,7 @@ public class SaveLoadScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void Save(GameEvent.CallbackContext context)
+    public void Save(GameEvent.CallbackContext _)
     {
         foreach(var toSave in _savedData)
         {
@@ -48,7 +54,7 @@ public class SaveLoadScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void Load(GameEvent.CallbackContext context)
+    public void Load(GameEvent.CallbackContext _)
     {
         foreach(var toLoad in _savedData)
         {
@@ -57,7 +63,7 @@ public class SaveLoadScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void ResetInit(GameEvent.CallbackContext context)
+    public void ResetInit(GameEvent.CallbackContext _)
     {
         foreach (var toReset in _savedData)
         {
@@ -73,42 +79,48 @@ public class SaveLoadScript : MonoBehaviour
         public void ResetInit();
     }
 
-    struct TransformSave : ISaveable
+    struct PositionSave : ISaveable
     {
         public Transform SavedObject;
         public Vector3 SavedPosition;
         public Vector3 InitialPosition;
-        public Quaternion SavedRotation;
-        public Quaternion InitialRotation;
 
-        public TransformSave(Transform toSave)
+        public PositionSave(Transform toSave)
         {
             SavedObject = toSave;
             InitialPosition = toSave.transform.position;
-            InitialRotation = toSave.transform.rotation;
             SavedPosition = toSave.transform.position;
-            SavedRotation = toSave.transform.rotation;
         }
 
-        public void Save()
-        {
-            SavedPosition = SavedObject.transform.position;
-            SavedRotation = SavedObject.transform.rotation;
-        }
-
-        public void Load()
-        {
-            SavedObject.transform.position = SavedPosition;
-            SavedObject.transform.rotation = SavedRotation;
-        }
-
+        public void Save() => SavedPosition = SavedObject.transform.position;
+        public void Load() => SavedObject.transform.position = SavedPosition;
         public void ResetInit()
         {
             SavedPosition = InitialPosition;
+            Load();
+        }
+    }
+
+    struct RotationSave : ISaveable
+    {
+        public Transform SavedObject;
+        public Vector3 SavedRotation;
+        public Vector3 InitialRotation;
+
+        public RotationSave(Transform toSave)
+        {
+            SavedObject = toSave;
+            InitialRotation = toSave.transform.forward;
+            SavedRotation = toSave.transform.forward;
+        }
+
+        public void Save() => SavedRotation = SavedObject.transform.forward;
+        public void Load() => SavedObject.transform.forward = SavedRotation;
+        public void ResetInit()
+        {
             SavedRotation = InitialRotation;
             Load();
         }
-
     }
 
     struct HealthSave : ISaveable
