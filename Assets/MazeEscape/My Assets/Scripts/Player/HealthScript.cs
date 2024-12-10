@@ -8,7 +8,7 @@ public class HealthScript : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
     [SerializeField, EventSignature(typeof(int))] private GameEvent _onDamageEvent;
-    [SerializeField, EventSignature] private GameEvent _onDeathEvent;
+    [SerializeField, EventSignature(typeof(GameObject))] private GameEvent _onDeathEvent;
     [SerializeField, EventSignature(typeof(int))] private GameEvent _onHealEvent;
 
     private int _currentHealth;
@@ -33,7 +33,7 @@ public class HealthScript : MonoBehaviour
             _alive = true;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, GameObject source)
     {
         if (amount <= 0)
             return;
@@ -46,13 +46,13 @@ public class HealthScript : MonoBehaviour
         _onDamageEvent.Raise(this, delta);
 
         if (_currentHealth <= 0)
-            Die();
+            Die(source);
     }
 
-    private void Die()
+    private void Die(GameObject source)
     {
         _alive = false;
-        _onDeathEvent.Raise(this);
+        _onDeathEvent.Raise(this, source);
     }
 
     public void HealDamage(int amount)
@@ -72,10 +72,11 @@ public class HealthScript : MonoBehaviour
     public void TryTakeDamage(GameEvent.CallbackContext context)
     {
         GameObject objectToTakeDamage = context.Get<GameObject>();
+        GameObject source = (context.Sender as MonoBehaviour)?.gameObject;
 
         if (objectToTakeDamage == this.gameObject)
         {
-            TakeDamage(1);
+            TakeDamage(1, source);
         }
     }
 }
