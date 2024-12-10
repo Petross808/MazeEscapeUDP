@@ -75,7 +75,7 @@ public class AudioSystemScript : MonoBehaviour
         audioSource.clip = soundEffect.GetClip();
         audioSource.volume = _masterVolume * (soundEffect.IsMusicTrack ? _musicVolume : _sfxVolume);
         audioSource.spatialBlend = soundEffect.Diegetic ? 1 : 0;
-        audioSource.loop = soundEffect.IsMusicTrack;
+        audioSource.loop = soundEffect.IsLooping;
         audioSource.Play();
     }
 

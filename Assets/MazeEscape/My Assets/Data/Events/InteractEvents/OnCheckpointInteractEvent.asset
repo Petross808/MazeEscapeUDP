@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
-  m_Name: OnPlayerHeal
+  m_Name: OnCheckpointInteractEvent
   m_EditorClassIdentifier: 
-  _editorName: OnPlayerHeal
-  _editorDescription: Raised when the player heals their health.
+  _editorName: OnCheckpointInteractEvent
+  _editorDescription: Raised when any checkpoint is interacted with.
   _debugLog: 0
-  _contextVariables:
-  - Name: Amount
-    Type: System.Int32
+  _contextVariables: []

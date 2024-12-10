@@ -17,5 +17,6 @@ MonoBehaviour:
   _pickAtRandom: 0
   _diegetic: 0
   _isMusicTrack: 1
+  _isLooping: 1
   _soundEffectVariants:
   - {fileID: 8300000, guid: 0ed717ffa6829444bafff1108c39fdec, type: 3}

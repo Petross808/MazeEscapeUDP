@@ -127,9 +127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9124429641556348041}
   - component: {fileID: 3450721872586123418}
-  - component: {fileID: 693829739066427993}
   - component: {fileID: 8869215504902883981}
   - component: {fileID: -1899741406283729797}
+  - component: {fileID: 2814627824494438723}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -173,27 +173,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.75
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &693829739066427993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3659165341715637238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af627dcbbc1e5524f904bce9faf2e6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onTriggerEnterEvent: {fileID: 11400000, guid: 0340d8c4b806f7c4e9ec1c1fba35d616,
-    type: 2}
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!208 &8869215504902883981
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -226,6 +209,22 @@ MonoBehaviour:
   _soundEffect: {fileID: 11400000, guid: bee6a80f8992a5041b9d226bf4857b61, type: 2}
   _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
     type: 2}
+--- !u!114 &2814627824494438723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659165341715637238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4e6c6585e6a4c41868c7807b27b1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb, type: 2}
+  _cooldown: 10
+  _raiseOnInteract: {fileID: 11400000, guid: 0340d8c4b806f7c4e9ec1c1fba35d616, type: 2}
+  _uses: -1
 --- !u!1001 &3380350898435266970
 PrefabInstance:
   m_ObjectHideFlags: 0

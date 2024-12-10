@@ -10,10 +10,12 @@ public class GameSoundEffect : ScriptableGameObject
     [SerializeField] bool _pickAtRandom = true;
     [SerializeField] bool _diegetic = true;
     [SerializeField] bool _isMusicTrack = false;
+    [SerializeField] bool _isLooping = false;
     [SerializeField] List<AudioClip> _soundEffectVariants;
 
     public bool Diegetic => _diegetic;
     public bool IsMusicTrack => _isMusicTrack;
+    public bool IsLooping => _isLooping;
 
     private int _currentIndex = -1;
 
