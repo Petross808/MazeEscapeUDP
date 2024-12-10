@@ -205,6 +205,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 760081411}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &374054256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445314970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +803,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.40821788
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10938167
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8754261
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.23456976
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -130
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -989,6 +1025,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1783174151}
     m_Modifications:
+    - target: {fileID: 4927424916864600674, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
+        type: 3}
+      propertyPath: _rotationsToSave.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927424916864600674, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
+        type: 3}
+      propertyPath: '_rotationsToSave.Array.data[0]'
+      value: 
+      objectReference: {fileID: 374054256}
     - target: {fileID: 5371226426790103381, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
         type: 3}
       propertyPath: m_Name
