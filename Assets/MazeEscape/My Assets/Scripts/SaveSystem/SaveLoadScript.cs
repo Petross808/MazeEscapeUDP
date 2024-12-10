@@ -15,6 +15,8 @@ public class SaveLoadScript : MonoBehaviour
 
     private void Start()
     {
+        this.EnsureSingleInstance();
+
         foreach (var toSave in _positionsToSave)
         {
             _savedData.Add(new PositionSave(toSave));
