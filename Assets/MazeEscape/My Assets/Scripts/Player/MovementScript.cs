@@ -8,6 +8,8 @@ public class MovementScript : MonoBehaviour, IControllable
     [SerializeField] private float _walkSpeed;
     [SerializeField] private Transform _head;
     [SerializeField] private float _walkHeadOffset;
+    [SerializeField] private float _runningRadius;
+    [SerializeField] private float _walkingRadius;
     [SerializeField] private float _stepDistance;
     [SerializeField, EventSignature] private GameEvent _onRunStepEvent;
     [SerializeField, EventSignature] private GameEvent _onWalkStepEvent;
@@ -37,9 +39,15 @@ public class MovementScript : MonoBehaviour, IControllable
 
         _isWalking = isWalking;
         if (_isWalking)
+        {
             _head.transform.Translate(0, -_walkHeadOffset, 0);
+            _agent.radius = _walkingRadius;
+        }
         else
+        {
             _head.transform.Translate(0, _walkHeadOffset, 0);
+            _agent.radius = _runningRadius;
+        }
     }
 
     private void Update()
