@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 2508414019565631201}
   - component: {fileID: 183183050062532427}
   - component: {fileID: 8577224764871994646}
+  - component: {fileID: 758962066603112112}
   - component: {fileID: 2974121089717580364}
   - component: {fileID: 5887949113214252781}
   - component: {fileID: -8392542649590589871}
@@ -208,6 +209,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &758962066603112112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016926485945542220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 4b7d7b3bfb8520241a2eed9bf3fae252, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 183183050062532427}
+        m_TargetAssemblyTypeName: ScarecrowAIScript, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!195 &2974121089717580364
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -222,7 +251,7 @@ NavMeshAgent:
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 3600
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -258,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 0ba533121c6e95a4cb8813860a2331fb, type: 2}
+  _listeningTo: {fileID: 11400000, guid: fdc0668e54a56a040ade91b2d9767673, type: 2}
   _soundEffect: {fileID: 11400000, guid: 3b935ff2a3f914f45a8bd7ea7d9b75ec, type: 2}
   _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
     type: 2}
@@ -273,6 +302,7 @@ GameObject:
   - component: {fileID: 2447679998074102270}
   - component: {fileID: 3862992424916337911}
   - component: {fileID: 8731905727056645947}
+  - component: {fileID: 6452574196650622991}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -289,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 7520781255329402488}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,10 +344,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: -0.4, z: 0}
 --- !u!114 &8731905727056645947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +365,22 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &6452574196650622991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520781255329402488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 4b7d7b3bfb8520241a2eed9bf3fae252, type: 2}
+  _soundEffect: {fileID: 11400000, guid: ede956d7058b2a64fb0ee1542f2daff5, type: 2}
+  _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
+    type: 2}
 --- !u!1 &8832923974377007739
 GameObject:
   m_ObjectHideFlags: 0
