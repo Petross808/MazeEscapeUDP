@@ -15,4 +15,6 @@ MonoBehaviour:
   _editorName: OnPlayerDeath
   _editorDescription: Raised when the player dies.
   _debugLog: 0
-  _contextVariables: []
+  _contextVariables:
+  - Name: KilledBy
+    Type: UnityEngine.GameObject, UnityEngine.CoreModule

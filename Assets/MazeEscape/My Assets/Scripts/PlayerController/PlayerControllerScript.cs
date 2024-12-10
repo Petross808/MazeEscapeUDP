@@ -95,6 +95,18 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
+    [EventSignature]
+    public void BlockInput(GameEvent.CallbackContext _)
+    {
+        _input.DeactivateInput();
+    }
+
+    [EventSignature]
+    public void UnblockInput(GameEvent.CallbackContext _)
+    {
+        _input.ActivateInput();
+    }
+
     private void RunStart(InputAction.CallbackContext context)
     {
         _controllableScript?.SetMoveDirection(context.ReadValue<Vector2>());

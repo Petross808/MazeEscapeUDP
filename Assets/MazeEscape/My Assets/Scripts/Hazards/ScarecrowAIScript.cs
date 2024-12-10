@@ -50,8 +50,14 @@ public class ScarecrowAIScript : MonoBehaviour
 
         if (_unfreezeTimer < _unfreezeDelayTime)
         {
-            _onUnfreezeStartedEvent.Raise(this);
             _unfreezeTimer += Time.deltaTime;
+
+            if(_unfreezeTimer >= _unfreezeDelayTime/2 && !_hitbox.enabled)
+            {
+                _onUnfreezeStartedEvent.Raise(this);
+                _hitbox.enabled = true;
+            }
+
             if (_unfreezeTimer >= _unfreezeDelayTime)
             {
                 _onUnfreezeEvent.Raise(this);
@@ -102,5 +108,13 @@ public class ScarecrowAIScript : MonoBehaviour
         NavMeshPath path = new();
         if(_agent.CalculatePath(_player.transform.position, path))
             _agent.SetPath(path);
+    }
+
+    [EventSignature]
+    public void Stop(GameEvent.CallbackContext _)
+    {
+        _agent.isStopped = true;
+        _unfreezeTimer = 0;
+        _hitbox.enabled = false;
     }
 }
