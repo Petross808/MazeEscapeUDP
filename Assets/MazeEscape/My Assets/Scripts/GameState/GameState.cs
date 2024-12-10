@@ -8,6 +8,8 @@ public class GameState : MonoBehaviour
     [SerializeField, EventSignature] GameEvent _onMainMenuOpenedEvent;
     [SerializeField, EventSignature] GameEvent _onGameStateTransitionEvent;
     [SerializeField, EventSignature] GameEvent _onCheckpointSaveEvent;
+    [SerializeField, EventSignature] GameEvent _onGameWonEvent;
+    [SerializeField] GameObject _finalCheckpoint;
 
     private void Awake()
     {
@@ -37,6 +39,9 @@ public class GameState : MonoBehaviour
     public void CheckpointSave(GameEvent.CallbackContext _)
     {
         _onCheckpointSaveEvent.Raise(this);
+
+        if (context.Sender is Component go && go.gameObject == _finalCheckpoint)
+            _onGameWonEvent.Raise(this);
     }
 
 }

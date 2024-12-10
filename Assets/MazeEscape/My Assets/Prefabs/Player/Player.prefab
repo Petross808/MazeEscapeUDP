@@ -65,7 +65,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -202,6 +202,87 @@ MonoBehaviour:
   _soundEffect: {fileID: 11400000, guid: 994c004f90a25bf4db1f3952d2a93d98, type: 2}
   _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
     type: 2}
+--- !u!1 &3639317625886850731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3833956058513685355}
+  - component: {fileID: 6034699474491991359}
+  - component: {fileID: 7915298606913310375}
+  m_Layer: 0
+  m_Name: DeathAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3833956058513685355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639317625886850731}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7347661357544827500}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6034699474491991359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639317625886850731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168848fccf9508848995f455b4363797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 9215190223439952387}
+  _turnTime: 0.25
+  _holdTime: 2
+  _onDeathAnimationStart: {fileID: 11400000, guid: 4b7d7b3bfb8520241a2eed9bf3fae252,
+    type: 2}
+  _onDeathAnimationEnd: {fileID: 11400000, guid: 51ae1f7d8d1aa744485dd927f0831949,
+    type: 2}
+  _onPlayerRespawn: {fileID: 11400000, guid: 0225abff927d40e4abd8832e07922a78, type: 2}
+--- !u!114 &7915298606913310375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639317625886850731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 6d8740d6e5ec2d4428cd1def156c89ab, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6034699474491991359}
+        m_TargetAssemblyTypeName: DeathAnimation, Assembly-CSharp
+        m_MethodName: DeathSequence
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3724685951773758851
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +467,7 @@ Transform:
   - {fileID: 9215190223439952387}
   - {fileID: 7232860525812811797}
   - {fileID: 586598149101056037}
+  - {fileID: 3833956058513685355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7950774673976438002
@@ -404,6 +486,8 @@ MonoBehaviour:
   _walkSpeed: 10
   _head: {fileID: 9215190223439952387}
   _walkHeadOffset: 0.25
+  _runningRadius: 0.5
+  _walkingRadius: 0.1
   _stepDistance: 1
   _onRunStepEvent: {fileID: 11400000, guid: 70a3e9324bea09b4e8eebcfc66fa5699, type: 2}
   _onWalkStepEvent: {fileID: 11400000, guid: 7688ff0224de5904488e65685e75472e, type: 2}

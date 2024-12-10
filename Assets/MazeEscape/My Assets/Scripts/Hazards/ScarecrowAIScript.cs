@@ -7,16 +7,15 @@ public class ScarecrowAIScript : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _unfreezeDelayTime;
-    [SerializeField] private float _updatePathTime;
     [SerializeField] private Collider _visibleBounds;
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
 
     [SerializeField, EventSignature] GameEvent _onActivateEvent;
+    [SerializeField, EventSignature] GameEvent _onUnfreezeStartedEvent;
     [SerializeField, EventSignature] GameEvent _onUnfreezeEvent;
 
     private NavMeshAgent _agent;
-    private float _pathTimer;
     private float _unfreezeTimer;
     private bool _activated;
 
@@ -31,8 +30,6 @@ public class ScarecrowAIScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _pathTimer += Time.deltaTime;
-
         if (CheckIfVisible())
         {
             if(!_activated)
@@ -54,6 +51,13 @@ public class ScarecrowAIScript : MonoBehaviour
         if (_unfreezeTimer < _unfreezeDelayTime)
         {
             _unfreezeTimer += Time.deltaTime;
+
+            if(_unfreezeTimer >= _unfreezeDelayTime/2 && !_hitbox.enabled)
+            {
+                _onUnfreezeStartedEvent.Raise(this);
+                _hitbox.enabled = true;
+            }
+
             if (_unfreezeTimer >= _unfreezeDelayTime)
             {
                 _onUnfreezeEvent.Raise(this);
@@ -63,12 +67,6 @@ public class ScarecrowAIScript : MonoBehaviour
 
         _agent.isStopped = false;
         _hitbox.enabled = true;
-        if (_pathTimer > _updatePathTime)
-        {
-            _agent.SetDestination(_player.transform.position);
-            _pathTimer = 0;
-        }
-
     }
 
     private bool CheckIfVisible()
@@ -100,5 +98,23 @@ public class ScarecrowAIScript : MonoBehaviour
         }
 
         return false;
+    }
+
+    [EventSignature]
+    public void UpdatePath(GameEvent.CallbackContext _)
+    {
+        if (!_activated) return;
+
+        NavMeshPath path = new();
+        if(_agent.CalculatePath(_player.transform.position, path))
+            _agent.SetPath(path);
+    }
+
+    [EventSignature]
+    public void Stop(GameEvent.CallbackContext _)
+    {
+        _agent.isStopped = true;
+        _unfreezeTimer = 0;
+        _hitbox.enabled = false;
     }
 }

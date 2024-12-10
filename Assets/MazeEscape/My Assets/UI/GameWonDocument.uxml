@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MazeEscape/My%20Assets/UI/Stylesheets/PauseMenuStyleSheet.uss?fileID=7433441132597879392&amp;guid=9f4b20c5a0a33d54fbbc571f5f1699c6&amp;type=3#PauseMenuStyleSheet" />
+    <engine:VisualElement name="Panel">
+        <engine:Label text="YOu won" name="Header" class="header" />
+        <engine:VisualElement name="Buttons">
+            <engine:Button name="HomeButton" class="button" style="background-image: url(&quot;project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Icons/IconSet_1%20(2).png?fileID=21300000&amp;guid=371bcf485080872489fbe9b50b7cb34c&amp;type=3#IconSet_1 (2)&quot;);" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
