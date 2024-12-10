@@ -1,10 +1,9 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
 
 public class SaveLoadScript : MonoBehaviour
 {
@@ -12,10 +11,14 @@ public class SaveLoadScript : MonoBehaviour
     [SerializeField] List<Transform> _rotationsToSave;
 
     private readonly List<ISaveable> _savedData = new();
+    private SaveData _saveData;
+    private List<ISaveData> _saveDataObjects;
 
     private void Start()
     {
         this.EnsureSingleInstance();
+
+        this._saveDataObjects = FindAllSaveDataObjects();
 
         foreach (var toSave in _positionsToSave)
         {
@@ -45,6 +48,47 @@ public class SaveLoadScript : MonoBehaviour
             _savedData.Add(new ScarecrowAISave(toSave));
         }
     }
+
+    [EventSignature]
+    public void NewGame(GameEvent.CallbackContext context)
+    {
+        this._saveData = new SaveData();
+    }
+
+    [EventSignature]
+    public void LoadData(GameEvent.CallbackContext context)
+    {
+        //TODO load from file
+
+        if(this._savedData == null)
+        {
+            NewGame(context);
+            Debug.Log("No data to load");
+        }
+
+        foreach(ISaveData saveDataObj in  this._saveDataObjects)
+        {
+            saveDataObj.LoadData(_saveData);
+        }
+    }
+
+    [EventSignature]
+    public void SaveGame(GameEvent.CallbackContext context)
+    {
+        foreach(ISaveData saveDataObj in this._saveDataObjects)
+        {
+            saveDataObj.SaveData(ref _saveData);
+        }
+
+        //TODO save to file
+    }
+
+    private List<ISaveData> FindAllSaveDataObjects()
+    {
+        IEnumerable<ISaveData> saveDataObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveData>();       
+        return new List<ISaveData>(saveDataObjects);
+    }
+
 
     [EventSignature]
     public void Save(GameEvent.CallbackContext _)
