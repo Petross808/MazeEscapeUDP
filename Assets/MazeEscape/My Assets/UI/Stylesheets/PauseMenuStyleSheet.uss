@@ -1,21 +1,50 @@
-VisualElement {
-}
-
-.button {
-    width: 16%;
-    height: 26%;
-    position: relative;
-    color: rgba(27, 27, 27, 0);
-    -unity-text-outline-color: rgba(0, 0, 0, 0);
-    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
-    background-color: rgba(0, 0, 0, 0);
+#Panel {
+    background-color: rgb(25, 25, 25);
+    -unity-background-image-tint-color: rgb(125, 125, 125);
+    background-image: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Sprites/Backgrounds/Background%201.png?fileID=21300000&guid=a0a8e209b62194c4690c7f53e1090896&type=3#Background 1");
+    width: 50%;
+    height: 60%;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+    flex-grow: 1;
+    position: absolute;
+    top: 20%;
+    left: 25%;
 }
 
 .header {
     width: 50%;
-    height: 30%;
-    font-size: 80px;
+    height: 20%;
+    font-size: 90px;
     color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/MazeEscape/Third%20Party%20Assets/UI/Fonts/WARTORN.ttf?fileID=12800000&guid=dbea26902f738e54ab137580285d918a&type=3#WARTORN");
+    letter-spacing: 3px;
+    -unity-text-align: upper-center;
+    position: relative;
+    top: 22%;
+}
+
+#Buttons {
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    width: 70%;
+    height: 70%;
+    flex-direction: row;
+}
+
+.button {
+    width: 24%;
+    height: 32%;
+    color: rgba(27, 27, 27, 0);
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .button:hover {

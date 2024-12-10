@@ -55,6 +55,8 @@ MonoBehaviour:
     type: 2}
   _onCheckpointSaveEvent: {fileID: 11400000, guid: 3264e45c0c665de46a2f4a29877d011f,
     type: 2}
+  _onGameWonEvent: {fileID: 11400000, guid: 8b62b18c085012d48809eb62d29ffabf, type: 2}
+  _finalCheckpoint: {fileID: 0}
 --- !u!114 &4527528825529303243
 MonoBehaviour:
   m_ObjectHideFlags: 0

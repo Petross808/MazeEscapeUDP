@@ -29,10 +29,10 @@ public class UiPanelScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void Open(GameEvent.CallbackContext context) => Open();
+    public void Open(GameEvent.CallbackContext _) => Open();
 
     [EventSignature]
-    public void Close(GameEvent.CallbackContext context) => Close();
+    public void Close(GameEvent.CallbackContext _) => Close();
 
     [EventSignature(typeof(bool))]
     public void SetOpen(GameEvent.CallbackContext context)
