@@ -69,12 +69,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listeningTo: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb, type: 2}
-  _cooldown: 1
+  _cooldown: 0.7
   _isOpen: 0
   _isLocked: 0
   _key: {fileID: 0}
-  _openingRate: 100
-  _openingAngle: 150
+  _openingRate: 150
+  _openingAngle: 100
   _hinge: {fileID: 9198850910079737887}
   _navMeshObstacle: {fileID: 4534869728551555183}
   _gateUnlock: {fileID: 11400000, guid: c4780d7879069104eb5c961c9e69ee55, type: 2}

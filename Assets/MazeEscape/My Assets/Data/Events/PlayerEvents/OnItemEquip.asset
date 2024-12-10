@@ -15,6 +15,4 @@ MonoBehaviour:
   _editorName: 
   _editorDescription: 
   _debugLog: 0
-  _contextVariables:
-  - Name: HeldItem
-    Type: Item
+  _contextVariables: []

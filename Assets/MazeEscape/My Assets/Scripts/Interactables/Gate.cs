@@ -62,7 +62,6 @@ public class Gate : Interactable
 
         while (_isTurning)
         {
-            Debug.Log(_hinge.transform.rotation.eulerAngles.y);
             float turn = _openingRate * Time.deltaTime;
             if (Mathf.Abs(_hinge.transform.rotation.eulerAngles.y - _turnTarget) <= turn)
             {
