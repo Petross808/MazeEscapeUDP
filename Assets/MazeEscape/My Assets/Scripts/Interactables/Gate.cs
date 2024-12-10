@@ -10,8 +10,6 @@ public class Gate : Interactable
     [SerializeField] private Item _key;
     [SerializeField] private float _openingRate;
     [SerializeField] private float _openingAngle;
-    [SerializeField] private GameObject _hinge;
-    [SerializeField] private NavMeshObstacle _navMeshObstacle;
 
     [SerializeField, EventSignature] private GameEvent _gateUnlock;
     [SerializeField, EventSignature] private GameEvent _lockedGateInteract;
@@ -45,7 +43,6 @@ public class Gate : Interactable
 
     public void Toggle()
     {
-        _navMeshObstacle.enabled = _isOpen;
         _isOpen = !_isOpen;
 
         if (_isOpen)
@@ -63,17 +60,17 @@ public class Gate : Interactable
         while (_isTurning)
         {
             float turn = _openingRate * Time.deltaTime;
-            if (Mathf.Abs(_hinge.transform.rotation.eulerAngles.y - _turnTarget) <= turn)
+            if (Mathf.Abs(transform.rotation.eulerAngles.y - _turnTarget) <= turn)
             {
-                turn = Mathf.Abs(_hinge.transform.rotation.eulerAngles.y - _turnTarget); 
+                turn = Mathf.Abs(transform.rotation.eulerAngles.y - _turnTarget); 
                 _isTurning = false;
             }
 
-            if (_hinge.transform.rotation.eulerAngles.y> _turnTarget)
+            if (transform.rotation.eulerAngles.y> _turnTarget)
                 turn = -turn;
 
-            _hinge.transform.Rotate(0, turn, 0);
-            yield return new WaitForEndOfFrame();
+            transform.Rotate(0, turn, 0);
+            yield return null;
         }
 
         yield return null;
