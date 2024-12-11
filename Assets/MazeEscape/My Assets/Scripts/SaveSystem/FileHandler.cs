@@ -13,8 +13,14 @@ public class FileHandler
         this._path = Path.Combine(dataPath, fileName);
     }
 
+    public bool SaveExists()
+    {
+        return File.Exists(this._path);
+    }
+
     public SaveData Load()
     {
+        Debug.Log("Attempt to load from file");
         SaveData save = null;
         if (File.Exists(this._path))
         {
@@ -30,6 +36,7 @@ public class FileHandler
 
                 }
                 save = JsonUtility.FromJson<SaveData>(saveFromLoad);
+                Debug.Log("Succesfully loaded");
             }
             catch(Exception e)
             {
@@ -41,6 +48,7 @@ public class FileHandler
 
     public void Save(SaveData save)
     {
+        Debug.Log("Attempt to savet to file");
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(this._path));
@@ -54,7 +62,7 @@ public class FileHandler
                     writer.Write(saveToWrite);
                 }
             }
-
+            Debug.Log("Succesfully saved?");
         }
         catch(Exception e)
         {

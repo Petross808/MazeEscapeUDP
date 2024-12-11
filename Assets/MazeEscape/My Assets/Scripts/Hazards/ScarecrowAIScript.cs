@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class ScarecrowAIScript : MonoBehaviour
+public class ScarecrowAIScript : MonoBehaviour, ISaveData
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _unfreezeDelayTime;
@@ -116,5 +116,17 @@ public class ScarecrowAIScript : MonoBehaviour
         _agent.isStopped = true;
         _unfreezeTimer = 0;
         _hitbox.enabled = false;
+    }
+
+    public void LoadData(SaveData data)
+    {
+        this._agent = data.enemyScarecrowAgent;
+        this._activated = data.enemyScarecrowActivated;
+    }
+
+    public void SaveData(ref SaveData data)
+    {
+        data.enemyScarecrowAgent = this._agent;
+        data.enemyScarecrowActivated = this._activated;
     }
 }

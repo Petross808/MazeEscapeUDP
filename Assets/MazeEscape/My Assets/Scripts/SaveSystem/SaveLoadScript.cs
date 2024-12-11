@@ -7,11 +7,13 @@ using UnityEngine.AI;
 
 public class SaveLoadScript : MonoBehaviour
 {
+    /*
     [SerializeField] List<Transform> _positionsToSave;
     [SerializeField] List<Transform> _rotationsToSave;
 
     private readonly List<ISaveable> _savedData = new();
-    
+    */
+
     private SaveData _saveData;
     private List<ISaveData> _saveDataObjects;
 
@@ -26,6 +28,7 @@ public class SaveLoadScript : MonoBehaviour
         this._saveDataObjects = FindAllSaveDataObjects();
         this._fileHandler = new FileHandler(Application.persistentDataPath, _fileName);
 
+        /*
         foreach (var toSave in _positionsToSave)
         {
             _savedData.Add(new PositionSave(toSave));
@@ -53,6 +56,7 @@ public class SaveLoadScript : MonoBehaviour
         {
             _savedData.Add(new ScarecrowAISave(toSave));
         }
+        */
     }
 
     [EventSignature]
@@ -62,14 +66,16 @@ public class SaveLoadScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void LoadData(GameEvent.CallbackContext context)
+    public void LoadGame(GameEvent.CallbackContext context)
     {
-        this._saveData = this._fileHandler.Load();
-
-        if(this._savedData == null)
+        if(this._saveData == null)
         {
             NewGame(context);
             Debug.Log("No data to load");
+        }
+        else if(this._fileHandler.SaveExists())
+        {
+            this._saveData = this._fileHandler.Load();
         }
 
         foreach(ISaveData saveDataObj in  this._saveDataObjects)
@@ -95,7 +101,7 @@ public class SaveLoadScript : MonoBehaviour
         return new List<ISaveData>(saveDataObjects);
     }
 
-
+    /*
     [EventSignature]
     public void Save(GameEvent.CallbackContext _)
     {
@@ -122,7 +128,7 @@ public class SaveLoadScript : MonoBehaviour
             toReset.ResetInit();
         }
     }
-
+    
 
     interface ISaveable
     {
@@ -254,4 +260,5 @@ public class SaveLoadScript : MonoBehaviour
             Load();
         }
     }
+    */
 }

@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4927424916864600674}
         m_TargetAssemblyTypeName: SaveLoadScript, Assembly-CSharp
-        m_MethodName: Save
+        m_MethodName: SaveGame
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4927424916864600674}
         m_TargetAssemblyTypeName: SaveLoadScript, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadData
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4927424916864600674}
         m_TargetAssemblyTypeName: SaveLoadScript, Assembly-CSharp
-        m_MethodName: ResetInit
+        m_MethodName: LoadData
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

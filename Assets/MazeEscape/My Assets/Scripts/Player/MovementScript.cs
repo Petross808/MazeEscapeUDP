@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class MovementScript : MonoBehaviour, IControllable
+public class MovementScript : MonoBehaviour, IControllable, ISaveData
 {
     [SerializeField] private float _runSpeed;
     [SerializeField] private float _walkSpeed;
@@ -78,5 +78,27 @@ public class MovementScript : MonoBehaviour, IControllable
         {
             _agent.isStopped = true;
         }
+    }
+
+    public void LoadData(SaveData data)
+    {
+        this._agent = data.playerAgent;
+        this._head = data.playerHead;
+        this._agent.Warp(data.playerPosition);
+        this._agent.gameObject.transform.rotation = data.playerRotation;
+        Debug.Log("movement script load");
+        Debug.Log(data.playerAgent);
+        Debug.Log(data.playerHead);
+        Debug.Log(data.playerPosition);
+        Debug.Log(data.playerRotation);
+
+    }
+
+    public void SaveData(ref SaveData data)
+    {
+        data.playerAgent = this._agent;
+        data.playerHead = this._head;
+        data.playerPosition = this._agent.nextPosition;
+        data.playerRotation = this._agent.gameObject.transform.rotation;
     }
 }
