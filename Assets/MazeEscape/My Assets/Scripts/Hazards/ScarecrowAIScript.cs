@@ -11,6 +11,7 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
     [SerializeField] private Collider _visibleBounds;
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
+    [SerializeField] private int _loseAggroAfterRepathAttempts;
 
     [SerializeField] private GameObject _activeModel;
     [SerializeField] private GameObject _inactiveModel;
@@ -22,6 +23,9 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
     private NavMeshAgent _agent;
     private float _unfreezeTimer;
     private bool _activated;
+    private Vector3 _homePosition;
+    private Vector3 _homeRotation;
+    private int _aggroTimer;
 
     public bool Activated { get => _activated; 
         set
@@ -37,6 +41,9 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
 
     private void Awake()
     {
+        _aggroTimer = 0;
+        _homePosition = transform.position;
+        _homeRotation = transform.forward;
         _agent = GetComponent<NavMeshAgent>();
         _hitbox.enabled = false;
         Activated = false;
@@ -121,9 +128,23 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
     {
         if (!Activated) return;
 
-        NavMeshPath path = new();
-        if(_agent.CalculatePath(_player.transform.position, path))
-            _agent.SetPath(path);
+        _agent.SetDestination(_player.transform.position);
+        Debug.Log(_agent.pathStatus);
+        if(_agent.pathStatus == NavMeshPathStatus.PathPartial)
+        {
+            _agent.SetDestination(_homePosition);
+            _aggroTimer++;
+        }
+
+        if(_loseAggroAfterRepathAttempts > 0 && _aggroTimer >= _loseAggroAfterRepathAttempts)
+        {
+            Activated = false;
+            _agent.nextPosition = _homePosition;
+            transform.forward = _homeRotation;
+            _agent.isStopped = true;
+            _unfreezeTimer = 0;
+            _hitbox.enabled = false;
+        }
     }
 
     [EventSignature]
