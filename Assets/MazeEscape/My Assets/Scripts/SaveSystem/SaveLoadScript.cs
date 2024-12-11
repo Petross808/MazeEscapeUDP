@@ -11,14 +11,20 @@ public class SaveLoadScript : MonoBehaviour
     [SerializeField] List<Transform> _rotationsToSave;
 
     private readonly List<ISaveable> _savedData = new();
+    
     private SaveData _saveData;
     private List<ISaveData> _saveDataObjects;
+
+    [Header("File Storage Name")]
+    [SerializeField] private string _fileName;
+    private FileHandler _fileHandler;
 
     private void Start()
     {
         this.EnsureSingleInstance();
 
         this._saveDataObjects = FindAllSaveDataObjects();
+        this._fileHandler = new FileHandler(Application.persistentDataPath, _fileName);
 
         foreach (var toSave in _positionsToSave)
         {
@@ -58,7 +64,7 @@ public class SaveLoadScript : MonoBehaviour
     [EventSignature]
     public void LoadData(GameEvent.CallbackContext context)
     {
-        //TODO load from file
+        this._saveData = this._fileHandler.Load();
 
         if(this._savedData == null)
         {
@@ -80,7 +86,7 @@ public class SaveLoadScript : MonoBehaviour
             saveDataObj.SaveData(ref _saveData);
         }
 
-        //TODO save to file
+        this._fileHandler.Save(_saveData);
     }
 
     private List<ISaveData> FindAllSaveDataObjects()
