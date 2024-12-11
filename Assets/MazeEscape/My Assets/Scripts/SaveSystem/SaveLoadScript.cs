@@ -71,7 +71,6 @@ public class SaveLoadScript : MonoBehaviour
         if(this._saveData == null)
         {
             NewGame(context);
-            Debug.Log("No data to load");
         }
         else if(this._fileHandler.SaveExists())
         {
@@ -87,7 +86,6 @@ public class SaveLoadScript : MonoBehaviour
     [EventSignature]
     public void SaveGame(GameEvent.CallbackContext context)
     {
-        Debug.Log("saveGame attempt");
         foreach(ISaveData saveDataObj in this._saveDataObjects)
         {
             saveDataObj.SaveData(ref _saveData);

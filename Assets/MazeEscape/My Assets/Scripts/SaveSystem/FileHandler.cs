@@ -20,7 +20,6 @@ public class FileHandler
 
     public SaveData Load()
     {
-        Debug.Log("Attempt to load from file");
         SaveData save = null;
         if (File.Exists(this._path))
         {
@@ -31,12 +30,10 @@ public class FileHandler
                 {
                     using (StreamReader reader = new StreamReader(stream))
                     {
-                        saveFromLoad = reader.ToString();
+                        saveFromLoad = reader.ReadToEnd();
                     }
-
                 }
                 save = JsonUtility.FromJson<SaveData>(saveFromLoad);
-                Debug.Log("Succesfully loaded");
             }
             catch(Exception e)
             {
@@ -48,7 +45,6 @@ public class FileHandler
 
     public void Save(SaveData save)
     {
-        Debug.Log("Attempt to savet to file");
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(this._path));
@@ -62,7 +58,6 @@ public class FileHandler
                     writer.Write(saveToWrite);
                 }
             }
-            Debug.Log("Succesfully saved?");
         }
         catch(Exception e)
         {
