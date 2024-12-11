@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class ScarecrowAIScript : MonoBehaviour
@@ -11,6 +12,9 @@ public class ScarecrowAIScript : MonoBehaviour
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
 
+    [SerializeField] private GameObject _activeModel;
+    [SerializeField] private GameObject _inactiveModel;
+
     [SerializeField, EventSignature] GameEvent _onActivateEvent;
     [SerializeField, EventSignature] GameEvent _onUnfreezeStartedEvent;
     [SerializeField, EventSignature] GameEvent _onUnfreezeEvent;
@@ -19,22 +23,32 @@ public class ScarecrowAIScript : MonoBehaviour
     private float _unfreezeTimer;
     private bool _activated;
 
-    public bool Activated { get => _activated; set => _activated = value; }
+    public bool Activated { get => _activated; 
+        set
+        {
+            if(!value)
+            {
+                _activeModel.SetActive(value);
+                _inactiveModel.SetActive(!value);
+            }
+            _activated = value;
+        }
+    }
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _hitbox.enabled = false;
-        _activated = false;
+        Activated = false;
     }
 
     private void FixedUpdate()
     {
         if (CheckIfVisible())
         {
-            if(!_activated)
+            if(!Activated)
             {
-                _activated = true;
+                Activated = true;
                 _onActivateEvent.Raise(this);
             }
             _agent.isStopped = true;
@@ -43,7 +57,7 @@ public class ScarecrowAIScript : MonoBehaviour
             return;
         }
 
-        if(!_activated)
+        if(!Activated)
         {
             return;
         }
@@ -60,6 +74,8 @@ public class ScarecrowAIScript : MonoBehaviour
 
             if (_unfreezeTimer >= _unfreezeDelayTime)
             {
+                _activeModel.SetActive(true);
+                _inactiveModel.SetActive(false);
                 _onUnfreezeEvent.Raise(this);
             }
             return;
@@ -103,7 +119,7 @@ public class ScarecrowAIScript : MonoBehaviour
     [EventSignature]
     public void UpdatePath(GameEvent.CallbackContext _)
     {
-        if (!_activated) return;
+        if (!Activated) return;
 
         NavMeshPath path = new();
         if(_agent.CalculatePath(_player.transform.position, path))
