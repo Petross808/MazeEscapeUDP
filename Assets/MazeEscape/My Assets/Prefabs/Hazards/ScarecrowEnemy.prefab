@@ -444,6 +444,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _hitbox: {fileID: 3862992424916337911}
+  _loseAggroAfterRepathAttempts: 10
   _activeModel: {fileID: 1198948391120352640}
   _inactiveModel: {fileID: 7856473145195707797}
   _onActivateEvent: {fileID: 11400000, guid: 899ed5b5329490d4eb16a6d810daa930, type: 2}
@@ -526,7 +527,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: -0.1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 0
 --- !u!114 &5887949113214252781
 MonoBehaviour:
