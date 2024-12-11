@@ -139,7 +139,7 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
         if(_loseAggroAfterRepathAttempts > 0 && _aggroTimer >= _loseAggroAfterRepathAttempts)
         {
             Activated = false;
-            _agent.nextPosition = _homePosition;
+            _agent.Warp(_homePosition);
             transform.forward = _homeRotation;
             _agent.isStopped = true;
             _unfreezeTimer = 0;
@@ -158,12 +158,17 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
     public void LoadData(SaveData data)
     {
         this._agent = data.enemyScarecrowAgent;
-        this._activated = data.enemyScarecrowActivated;
-    }
+        this.Activated = data.enemyScarecrowActivated;
+        this._agent.Warp(data.enemyScarecrowPosition);
+        this._agent.gameObject.transform.rotation = data.enemyScarecrowRotation;
+}
 
     public void SaveData(ref SaveData data)
     {
         data.enemyScarecrowAgent = this._agent;
-        data.enemyScarecrowActivated = this._activated;
+        data.enemyScarecrowActivated = this.Activated;
+        data.enemyScarecrowPosition = this._agent.nextPosition;
+        data.enemyScarecrowRotation = this._agent.transform.rotation;
+
     }
 }
