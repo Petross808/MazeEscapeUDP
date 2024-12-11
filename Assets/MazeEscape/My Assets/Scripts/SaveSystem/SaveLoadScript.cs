@@ -87,6 +87,7 @@ public class SaveLoadScript : MonoBehaviour
     [EventSignature]
     public void SaveGame(GameEvent.CallbackContext context)
     {
+        Debug.Log("saveGame attempt");
         foreach(ISaveData saveDataObj in this._saveDataObjects)
         {
             saveDataObj.SaveData(ref _saveData);

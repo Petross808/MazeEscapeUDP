@@ -53,7 +53,7 @@ public class FileHandler
         {
             Directory.CreateDirectory(Path.GetDirectoryName(this._path));
 
-            string saveToWrite = JsonUtility.ToJson(save);
+            string saveToWrite = JsonUtility.ToJson(save, true);
 
             using(FileStream stream = new FileStream(this._path, FileMode.Create))
             {

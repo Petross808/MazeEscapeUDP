@@ -86,12 +86,6 @@ public class MovementScript : MonoBehaviour, IControllable, ISaveData
         this._head = data.playerHead;
         this._agent.Warp(data.playerPosition);
         this._agent.gameObject.transform.rotation = data.playerRotation;
-        Debug.Log("movement script load");
-        Debug.Log(data.playerAgent);
-        Debug.Log(data.playerHead);
-        Debug.Log(data.playerPosition);
-        Debug.Log(data.playerRotation);
-
     }
 
     public void SaveData(ref SaveData data)
