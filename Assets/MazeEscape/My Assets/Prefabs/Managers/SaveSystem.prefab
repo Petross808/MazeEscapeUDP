@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2097d40c237376848be0125d47bb7665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transformsToSave: []
+  _positionsToSave: []
+  _rotationsToSave: []
+  _fileName: save
 --- !u!114 &3140281322626502124
 MonoBehaviour:
   m_ObjectHideFlags: 0
