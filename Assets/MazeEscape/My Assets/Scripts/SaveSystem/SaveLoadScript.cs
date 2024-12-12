@@ -26,6 +26,7 @@ public class SaveLoadScript : MonoBehaviour
     public void NewGame(GameEvent.CallbackContext context)
     {
         this._saveData = new SaveData();
+        SaveGame(context);
     }
 
     [EventSignature]

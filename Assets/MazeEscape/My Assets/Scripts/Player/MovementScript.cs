@@ -82,7 +82,6 @@ public class MovementScript : MonoBehaviour, IControllable, ISaveData
 
     public void LoadData(SaveData data)
     {
-        this._agent = data.playerAgent;
         this._head = data.playerHead;
         this._agent.Warp(data.playerPosition);
         this._agent.gameObject.transform.rotation = data.playerRotation;
@@ -90,7 +89,6 @@ public class MovementScript : MonoBehaviour, IControllable, ISaveData
 
     public void SaveData(ref SaveData data)
     {
-        data.playerAgent = this._agent;
         data.playerHead = this._head;
         data.playerPosition = this._agent.nextPosition;
         data.playerRotation = this._agent.gameObject.transform.rotation;

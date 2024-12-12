@@ -129,7 +129,6 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
         if (!Activated) return;
 
         _agent.SetDestination(_player.transform.position);
-        Debug.Log(_agent.pathStatus);
         if(_agent.pathStatus == NavMeshPathStatus.PathPartial)
         {
             _agent.SetDestination(_homePosition);
@@ -157,7 +156,6 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
 
     public void LoadData(SaveData data)
     {
-        this._agent = data.enemyScarecrowAgent;
         this.Activated = data.enemyScarecrowActivated;
         this._agent.Warp(data.enemyScarecrowPosition);
         this._agent.gameObject.transform.rotation = data.enemyScarecrowRotation;
@@ -165,10 +163,8 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
 
     public void SaveData(ref SaveData data)
     {
-        data.enemyScarecrowAgent = this._agent;
         data.enemyScarecrowActivated = this.Activated;
         data.enemyScarecrowPosition = this._agent.nextPosition;
         data.enemyScarecrowRotation = this._agent.transform.rotation;
-
     }
 }
