@@ -4,7 +4,7 @@ using UnityEngine.AI;
 using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class ScarecrowAIScript : MonoBehaviour
+public class ScarecrowAIScript : MonoBehaviour, ISaveData
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _unfreezeDelayTime;
@@ -129,7 +129,6 @@ public class ScarecrowAIScript : MonoBehaviour
         if (!Activated) return;
 
         _agent.SetDestination(_player.transform.position);
-        Debug.Log(_agent.pathStatus);
         if(_agent.pathStatus == NavMeshPathStatus.PathPartial)
         {
             _agent.SetDestination(_homePosition);
@@ -139,7 +138,7 @@ public class ScarecrowAIScript : MonoBehaviour
         if(_loseAggroAfterRepathAttempts > 0 && _aggroTimer >= _loseAggroAfterRepathAttempts)
         {
             Activated = false;
-            _agent.nextPosition = _homePosition;
+            _agent.Warp(_homePosition);
             transform.forward = _homeRotation;
             _agent.isStopped = true;
             _unfreezeTimer = 0;
@@ -153,5 +152,19 @@ public class ScarecrowAIScript : MonoBehaviour
         _agent.isStopped = true;
         _unfreezeTimer = 0;
         _hitbox.enabled = false;
+    }
+
+    public void LoadData(SaveData data)
+    {
+        this.Activated = data.enemyScarecrowActivated;
+        this._agent.Warp(data.enemyScarecrowPosition);
+        this._agent.gameObject.transform.rotation = data.enemyScarecrowRotation;
+}
+
+    public void SaveData(ref SaveData data)
+    {
+        data.enemyScarecrowActivated = this.Activated;
+        data.enemyScarecrowPosition = this._agent.nextPosition;
+        data.enemyScarecrowRotation = this._agent.transform.rotation;
     }
 }
