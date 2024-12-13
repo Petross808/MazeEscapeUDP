@@ -44,7 +44,7 @@ public class AudioSystemScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void StopAllPlaying(GameEvent.CallbackContext context)
+    public void StopAllPlaying(GameEvent.CallbackContext _)
     {
         foreach(var audioSource in _audioSourcePool)
         {
@@ -53,7 +53,7 @@ public class AudioSystemScript : MonoBehaviour
     }
 
     [EventSignature]
-    public void StopAllPlayingOnLoop(GameEvent.CallbackContext context)
+    public void StopAllPlayingOnLoop(GameEvent.CallbackContext _)
     {
         foreach (var audioSource in _audioSourcePool)
         {
@@ -106,7 +106,7 @@ public class AudioSystemScript : MonoBehaviour
         {
             if (audioSource.isPlaying)
             {
-                audioSource.volume = _masterVolume * (audioSource.loop ? _musicVolume : _sfxVolume);
+                audioSource.volume = _masterVolume * (audioSource.loop && audioSource.spatialBlend == 0 ? _musicVolume : _sfxVolume);
             }
         }
     }
