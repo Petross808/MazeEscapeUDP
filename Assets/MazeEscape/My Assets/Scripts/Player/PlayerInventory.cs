@@ -38,4 +38,16 @@ public class PlayerInventory : MonoBehaviour
         _hand = _empty;
     }
 
+    public void DropItem()
+    {
+        if (_hand != _empty)
+        {
+            _hand.transform.position = new Vector3 (transform.position.x, -0.5f, transform.position.z);
+            _hand.transform.rotation = transform.rotation;
+            _hand.transform.Rotate(0, _empty.transform.rotation.eulerAngles.y, 0);
+            _hand.transform.parent = null;
+            _hand = _empty;
+        }
+    }
+
 }
