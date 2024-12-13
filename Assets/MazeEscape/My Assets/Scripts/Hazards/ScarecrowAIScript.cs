@@ -9,6 +9,7 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
     [SerializeField] private GameObject _player;
     [SerializeField] private float _unfreezeDelayTime;
     [SerializeField] private Collider _visibleBounds;
+    [SerializeField] private float _visibilityDistance;
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
     [SerializeField] private int _loseAggroAfterRepathAttempts;
@@ -98,6 +99,9 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
         bool isInFrustum = GeometryUtility.TestPlanesAABB(frustum, _visibleBounds.bounds);
 
         if (!isInFrustum)
+            return false;
+
+        if(Vector3.Distance(Camera.main.transform.position, _visibleBounds.bounds.center) > _visibilityDistance)
             return false;
 
         Vector3[] points = new Vector3[8];
