@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
   m_Name: SFX_GateRattle
   m_EditorClassIdentifier: 
-  _editorName: 
+  _editorName: GateRattle
   _editorDescription: 
   _pickAtRandom: 1
   _diegetic: 1
   _isMusicTrack: 0
   _isLooping: 0
-  _soundEffectVariants: []
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: d4b09d582e333024fb5009e383827ed2, type: 3}
+  - {fileID: 8300000, guid: dc5b6cba8f6df744cbb3a76de0ce7dba, type: 3}
+  - {fileID: 8300000, guid: 31102a18f6a3aac4cae4659503f1b56e, type: 3}
+  - {fileID: 8300000, guid: 04655ddbda44db846b40aaad225bf147, type: 3}
+  - {fileID: 8300000, guid: d1ebd17d01883f3449c4913ac709034d, type: 3}
+  - {fileID: 8300000, guid: f32fea336f8aec645821847a94d14bb9, type: 3}
+  - {fileID: 8300000, guid: df266cb2df39c60438916388696dd433, type: 3}
+  - {fileID: 8300000, guid: 61b88294eab088a4b833e573efde3fc4, type: 3}
