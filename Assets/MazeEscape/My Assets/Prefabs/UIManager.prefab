@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 3578237085550328854}
   - component: {fileID: 8711175330610916947}
   - component: {fileID: 2763538524256293164}
+  - component: {fileID: 5205595018597797557}
   m_Layer: 0
   m_Name: MenuUi
   m_TagString: Untagged
@@ -353,6 +354,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5205595018597797557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442385857275631026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4573f74faa4aac4cac61524b1db2b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 2bce15325f0ac9f46a002fab7ceb3d01, type: 2}
+  _soundEffect: {fileID: 11400000, guid: 2911692deb1d190498befc92175ca1e0, type: 2}
+  _onSoundPlayRequestEvent: {fileID: 11400000, guid: a9461ac695a72ef429629f2a7087fbb6,
+    type: 2}
 --- !u!1 &6523688825155818114
 GameObject:
   m_ObjectHideFlags: 0
