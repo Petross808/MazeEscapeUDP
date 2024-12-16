@@ -35,12 +35,14 @@ public class SaveData
 
     public SaveData(SaveData other)
     {
+        //Player
         this.playerPosition = other.playerPosition;
         this.playerRotation = other.playerRotation;
         this.playerHeadRotation = other.playerHeadRotation;
         this.playerCurrentHealth = other.playerCurrentHealth;
         this.playerAlive = other.playerAlive;
 
+        //Scarecrow
         this.enemyScarecrowPosition = other.enemyScarecrowPosition;
         this.enemyScarecrowRotation = other.enemyScarecrowRotation;
         this.enemyScarecrowActivated = other.enemyScarecrowActivated;
@@ -57,6 +59,5 @@ public class SaveData
         this.blob_isStopped = other.blob_isStopped;
         this.blob_currentGooIndex = other.blob_currentGooIndex;
         this.blob_gooTrail = new(other.blob_gooTrail);
-
     }
 }
