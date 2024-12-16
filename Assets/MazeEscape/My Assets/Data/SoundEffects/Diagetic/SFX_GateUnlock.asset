@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
   m_Name: SFX_GateUnlock
   m_EditorClassIdentifier: 
-  _editorName: 
+  _editorName: GateUnlock
   _editorDescription: 
   _pickAtRandom: 1
   _diegetic: 1
   _isMusicTrack: 0
   _isLooping: 0
-  _soundEffectVariants: []
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: 39d4a83245d6fe6459d389cc91a105ed, type: 3}
+  - {fileID: 8300000, guid: 2786552a8b57e9042aeeb42c7d4a7699, type: 3}
+  - {fileID: 8300000, guid: da1835b423f5f3d479ab62b2ee710da3, type: 3}
+  - {fileID: 8300000, guid: 2a876e994fe2c7c4b9973505b7120ad6, type: 3}
+  - {fileID: 8300000, guid: 86679a83fe6ce27489a73bb42836b8a4, type: 3}
+  - {fileID: 8300000, guid: 9b1f751cca3b51c40807d4a10feb0e06, type: 3}

@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 9093034162779706481}
   - component: {fileID: 6274219993481411346}
   - component: {fileID: 1136844620164332380}
+  - component: {fileID: 6145169746140199229}
+  - component: {fileID: 2629121862322768658}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -237,6 +239,62 @@ MonoBehaviour:
       - m_Target: {fileID: 526472389904398813}
         m_TargetAssemblyTypeName: BlobAIScript, Assembly-CSharp
         m_MethodName: ChasePlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6145169746140199229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919213849010543119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 4b7d7b3bfb8520241a2eed9bf3fae252, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526472389904398813}
+        m_TargetAssemblyTypeName: BlobAIScript, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2629121862322768658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919213849010543119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 4b7d7b3bfb8520241a2eed9bf3fae252, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526472389904398813}
+        m_TargetAssemblyTypeName: BlobAIScript, Assembly-CSharp
+        m_MethodName: Stop
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

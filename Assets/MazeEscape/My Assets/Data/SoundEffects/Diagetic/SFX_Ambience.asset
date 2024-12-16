@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
-  m_Name: SFX_GateOpen
+  m_Name: SFX_Ambience
   m_EditorClassIdentifier: 
-  _editorName: GateOpen
+  _editorName: AmbienceSounds
   _editorDescription: 
   _pickAtRandom: 1
   _diegetic: 1
   _isMusicTrack: 0
   _isLooping: 0
   _soundEffectVariants:
-  - {fileID: 8300000, guid: 1550921034766d540849ba5004a43e4f, type: 3}
-  - {fileID: 8300000, guid: fb94decc7966dc54e926686a41ddb1d5, type: 3}
-  - {fileID: 8300000, guid: 409397a4f5f0b81438be58b55d1c7412, type: 3}
-  - {fileID: 8300000, guid: 36843c12f1e74904dacc4ed80679f603, type: 3}
+  - {fileID: 8300000, guid: b01afe3285e1eb043832c222c921683b, type: 3}
+  - {fileID: 8300000, guid: 42d5e44bb43833b4d8df27defdd1ae7b, type: 3}
+  - {fileID: 8300000, guid: e8254e0af64582f498bb5e496df897a1, type: 3}
+  - {fileID: 8300000, guid: b9ac794c05edc304abd14bb11943d46b, type: 3}
