@@ -1,15 +1,21 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class ScarecrowAIScript : MonoBehaviour
+public class ScarecrowAIScript : MonoBehaviour, ISaveData
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private float _unfreezeDelayTime;
     [SerializeField] private Collider _visibleBounds;
+    [SerializeField] private float _visibilityDistance;
     [SerializeField] private LayerMask _blockingSight;
     [SerializeField] private Collider _hitbox;
+    [SerializeField] private int _loseAggroAfterRepathAttempts;
+
+    [SerializeField] private GameObject _activeModel;
+    [SerializeField] private GameObject _inactiveModel;
 
     [SerializeField, EventSignature] GameEvent _onActivateEvent;
     [SerializeField, EventSignature] GameEvent _onUnfreezeStartedEvent;
@@ -18,23 +24,39 @@ public class ScarecrowAIScript : MonoBehaviour
     private NavMeshAgent _agent;
     private float _unfreezeTimer;
     private bool _activated;
+    private Vector3 _homePosition;
+    private Vector3 _homeRotation;
+    private int _aggroTimer;
 
-    public bool Activated { get => _activated; set => _activated = value; }
+    public bool Activated { get => _activated; 
+        set
+        {
+            if(!value)
+            {
+                _activeModel.SetActive(value);
+                _inactiveModel.SetActive(!value);
+            }
+            _activated = value;
+        }
+    }
 
     private void Awake()
     {
+        _aggroTimer = 0;
+        _homePosition = transform.position;
+        _homeRotation = transform.forward;
         _agent = GetComponent<NavMeshAgent>();
         _hitbox.enabled = false;
-        _activated = false;
+        Activated = false;
     }
 
     private void FixedUpdate()
     {
         if (CheckIfVisible())
         {
-            if(!_activated)
+            if(!Activated)
             {
-                _activated = true;
+                Activated = true;
                 _onActivateEvent.Raise(this);
             }
             _agent.isStopped = true;
@@ -43,7 +65,7 @@ public class ScarecrowAIScript : MonoBehaviour
             return;
         }
 
-        if(!_activated)
+        if(!Activated)
         {
             return;
         }
@@ -60,6 +82,8 @@ public class ScarecrowAIScript : MonoBehaviour
 
             if (_unfreezeTimer >= _unfreezeDelayTime)
             {
+                _activeModel.SetActive(true);
+                _inactiveModel.SetActive(false);
                 _onUnfreezeEvent.Raise(this);
             }
             return;
@@ -75,6 +99,9 @@ public class ScarecrowAIScript : MonoBehaviour
         bool isInFrustum = GeometryUtility.TestPlanesAABB(frustum, _visibleBounds.bounds);
 
         if (!isInFrustum)
+            return false;
+
+        if(Vector3.Distance(Camera.main.transform.position, _visibleBounds.bounds.center) > _visibilityDistance)
             return false;
 
         Vector3[] points = new Vector3[8];
@@ -103,11 +130,24 @@ public class ScarecrowAIScript : MonoBehaviour
     [EventSignature]
     public void UpdatePath(GameEvent.CallbackContext _)
     {
-        if (!_activated) return;
+        if (!Activated) return;
 
-        NavMeshPath path = new();
-        if(_agent.CalculatePath(_player.transform.position, path))
-            _agent.SetPath(path);
+        _agent.SetDestination(_player.transform.position);
+        if(_agent.pathStatus == NavMeshPathStatus.PathPartial)
+        {
+            _agent.SetDestination(_homePosition);
+            _aggroTimer++;
+        }
+
+        if(_loseAggroAfterRepathAttempts > 0 && _aggroTimer >= _loseAggroAfterRepathAttempts)
+        {
+            Activated = false;
+            _agent.Warp(_homePosition);
+            transform.forward = _homeRotation;
+            _agent.isStopped = true;
+            _unfreezeTimer = 0;
+            _hitbox.enabled = false;
+        }
     }
 
     [EventSignature]
@@ -116,5 +156,19 @@ public class ScarecrowAIScript : MonoBehaviour
         _agent.isStopped = true;
         _unfreezeTimer = 0;
         _hitbox.enabled = false;
+    }
+
+    public void LoadData(SaveData data)
+    {
+        this.Activated = data.enemyScarecrowActivated;
+        this._agent.Warp(data.enemyScarecrowPosition);
+        this._agent.gameObject.transform.rotation = data.enemyScarecrowRotation;
+}
+
+    public void SaveData(ref SaveData data)
+    {
+        data.enemyScarecrowActivated = this.Activated;
+        data.enemyScarecrowPosition = this._agent.nextPosition;
+        data.enemyScarecrowRotation = this._agent.transform.rotation;
     }
 }

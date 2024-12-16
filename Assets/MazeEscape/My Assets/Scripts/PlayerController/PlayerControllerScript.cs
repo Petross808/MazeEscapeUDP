@@ -14,6 +14,7 @@ public class PlayerControllerScript : MonoBehaviour
     private IControllable _controllableScript;
     private CameraScript _cameraScript;
     private InteractScript _interactScript;
+    private PlayerInventory _playerInventory;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerControllerScript : MonoBehaviour
         _controllableScript = _pawn.GetComponent<IControllable>();
         _cameraScript = _pawn.GetComponent<CameraScript>();
         _interactScript = _pawn.GetComponent<InteractScript>();
+        _playerInventory = _pawn.GetComponent<PlayerInventory>();
     }
 
     private void OnEnable()
@@ -46,6 +48,7 @@ public class PlayerControllerScript : MonoBehaviour
         _input.actions["Walk"].canceled += WalkEnd;
         _input.actions["Aim"].performed += AimChanged;
         _input.actions["Interact"].performed += OnInteract;
+        _input.actions["Drop"].performed += OnDrop;
         _input.actions["Pause"].performed += OnPauseToggle;
     }
 
@@ -135,6 +138,11 @@ public class PlayerControllerScript : MonoBehaviour
     private void OnInteract(InputAction.CallbackContext context)
     {
         _interactScript?.OnInteract();
+    }
+
+    private void OnDrop(InputAction.CallbackContext context)
+    {
+        _playerInventory?.DropItem();
     }
 
     private void OnPauseToggle(InputAction.CallbackContext context)

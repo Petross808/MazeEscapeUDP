@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class HealthScript : MonoBehaviour
+public class HealthScript : MonoBehaviour, ISaveData
 {
     [SerializeField] private int _maxHealth;
     [SerializeField, EventSignature(typeof(int))] private GameEvent _onDamageEvent;
@@ -78,5 +78,17 @@ public class HealthScript : MonoBehaviour
         {
             TakeDamage(1, source);
         }
+    }
+
+    public void LoadData(SaveData data)
+    {
+        this._currentHealth = data.playerCurrentHealth;
+        this._alive = data.playerAlive;
+    }
+
+    public void SaveData(ref SaveData data)
+    {
+        data.playerCurrentHealth = this._currentHealth;
+        data.playerAlive = this._alive;
     }
 }

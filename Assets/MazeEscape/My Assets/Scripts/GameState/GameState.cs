@@ -35,7 +35,7 @@ public class GameState : MonoBehaviour
         _onMainMenuOpenedEvent.Raise(this);
     }
 
-    [EventSignature(typeof(GameObject))]
+    [EventSignature]
     public void CheckpointSave(GameEvent.CallbackContext context)
     {
         _onCheckpointSaveEvent.Raise(this);
