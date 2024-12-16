@@ -1,32 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class AmbiencePlayer : MonoBehaviour
 {
-    [SerializeField, EventSignature] private GameEvent _ambienceEvent;
+    [SerializeField, EventSignature(typeof(GameSoundEffect), typeof(Vector3))] private GameEvent _soundEvent;
     [SerializeField] private GameObject _player;
+    [SerializeField] private GameSoundEffect _soundEffect;
     [SerializeField] private float _distance;
-    [SerializeField] private float _ambienceTimer;
+    [SerializeField] private int _ambienceTickTimer;
 
-    private float _angle;
-    private Vector3 _position = new Vector3(0, 2, 0);
-    private float _cooldown = 2;
+    private int _cooldown = 2;
 
 
-    private void Update()
+    [EventSignature]
+    public void Tick(GameEvent.CallbackContext _)
     {
-        _cooldown -= Time.deltaTime;
+        _cooldown--;
 
         if (_cooldown <= 0 )
         {
-            _cooldown = Random.Range(_ambienceTimer / 2, _ambienceTimer);
-            _angle = Random.Range(0, 360);
-            _position.x = Mathf.Sin(_angle) * _distance;
-            _position.z = Mathf.Cos(_angle) * _distance;
-            transform.position = _player.transform.position + _position;
-            _ambienceEvent.Raise(this);
+            _cooldown = Random.Range(_ambienceTickTimer / 2, _ambienceTickTimer);
+            Vector3 pos = _player.transform.position + Random.onUnitSphere * _distance;
+            _soundEvent.Raise(this, _soundEffect, pos);
         }
     }
 }
