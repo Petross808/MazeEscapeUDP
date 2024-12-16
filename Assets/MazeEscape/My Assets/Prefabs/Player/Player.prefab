@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca420541bd4c77043aa6ce84cd93267c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropEvent: {fileID: 11400000, guid: 9d04bede826d006419cc327edf14263c, type: 2}
   _empty: {fileID: 7479934963003452068}
 --- !u!114 &6859700466411381604
 MonoBehaviour:
