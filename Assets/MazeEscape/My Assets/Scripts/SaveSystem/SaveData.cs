@@ -9,7 +9,7 @@ public class SaveData
     //Player
     public Vector3 playerPosition;
     public Quaternion playerRotation;
-    public Transform playerHead;
+    public Quaternion playerHeadRotation;
     public int playerCurrentHealth;
     public bool playerAlive;
 
@@ -18,4 +18,16 @@ public class SaveData
     public Quaternion enemyScarecrowRotation;
     public bool enemyScarecrowActivated;
     public SaveData() {}
+
+    public SaveData(SaveData other)
+    {
+        this.playerPosition = other.playerPosition;
+        this.playerRotation = other.playerRotation;
+        this.playerHeadRotation = other.playerHeadRotation;
+        this.playerCurrentHealth = other.playerCurrentHealth;
+        this.playerAlive = other.playerAlive;
+        this.enemyScarecrowPosition = other.enemyScarecrowPosition;
+        this.enemyScarecrowRotation = other.enemyScarecrowRotation;
+        this.enemyScarecrowActivated = other.enemyScarecrowActivated;
+    }
 }

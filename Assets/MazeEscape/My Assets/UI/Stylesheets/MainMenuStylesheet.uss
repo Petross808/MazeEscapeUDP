@@ -11,7 +11,7 @@
 .button {
     font-size: 50px;
     width: 25%;
-    height: 13%;
+    height: 11%;
     align-self: center;
     border-top-left-radius: 0;
     border-top-right-radius: 0;

@@ -6,12 +6,14 @@ using UnityEngine.UIElements;
 
 public class MainMenuScript : MonoBehaviour
 {
-    [SerializeField, EventSignature] GameEvent _onPlayButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onNewGameButtonClickedEvent;
+    [SerializeField, EventSignature] GameEvent _onContinueButtonClickedEvent;
     [SerializeField, EventSignature] GameEvent _onSettingsButtonClickedEvent;
     [SerializeField, EventSignature] GameEvent _onButtonClickEvent;
 
     private UIDocument _document;
-    private Button _playButton;
+    private Button _newGameButton;
+    private Button _continueButton;
     private Button _settingsButton;
     private Button _quitButton;
 
@@ -20,8 +22,11 @@ public class MainMenuScript : MonoBehaviour
     private void Awake()
     {
         _document = GetComponent<UIDocument>();
-        _playButton = _document.rootVisualElement.Q<Button>("PlayButton");
-        _playButton.RegisterCallback<ClickEvent>(PlayGame);
+        _newGameButton = _document.rootVisualElement.Q<Button>("PlayButton");
+        _newGameButton.RegisterCallback<ClickEvent>(PlayNewGame);
+
+        _continueButton = _document.rootVisualElement.Q<Button>("ContinueButton");
+        _continueButton.RegisterCallback<ClickEvent>(ContinueGame);
 
         _settingsButton = _document.rootVisualElement.Q<Button>("SettingsButton");
         _settingsButton.RegisterCallback<ClickEvent>(OpenSettings);
@@ -36,9 +41,15 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    private void PlayGame(ClickEvent evt)
+    private void PlayNewGame(ClickEvent evt)
     {
-        _onPlayButtonClickedEvent.Raise(this);
+        _onNewGameButtonClickedEvent.Raise(this);
+        _onContinueButtonClickedEvent.Raise(this);
+    }
+
+    private void ContinueGame(ClickEvent evt)
+    {
+        _onContinueButtonClickedEvent.Raise(this);
     }
 
     private void OpenSettings(ClickEvent evt)
@@ -57,7 +68,8 @@ public class MainMenuScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        _playButton.UnregisterCallback<ClickEvent>(PlayGame);
+        _newGameButton.UnregisterCallback<ClickEvent>(PlayNewGame);
+        _continueButton.UnregisterCallback<ClickEvent>(ContinueGame);
         _settingsButton.UnregisterCallback<ClickEvent>(OpenSettings);
 
         for (int i = 0; i < _menuButtons.Count; i++)
