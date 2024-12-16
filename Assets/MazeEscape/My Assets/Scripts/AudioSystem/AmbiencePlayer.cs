@@ -14,10 +14,6 @@ public class AmbiencePlayer : MonoBehaviour
     private Vector3 _position = new Vector3(0, 2, 0);
     private float _cooldown = 2;
 
-    private void Start()
-    {
-        transform.parent = _player.transform;
-    }
 
     private void Update()
     {
@@ -27,11 +23,9 @@ public class AmbiencePlayer : MonoBehaviour
         {
             _cooldown = Random.Range(_ambienceTimer / 2, _ambienceTimer);
             _angle = Random.Range(0, 360);
-            _position.x = 0;
-            _position.z = 0;
             _position.x = Mathf.Sin(_angle) * _distance;
             _position.z = Mathf.Cos(_angle) * _distance;
-            transform.position = _position;
+            transform.position = _player.transform.position + _position;
             _ambienceEvent.Raise(this);
         }
     }
