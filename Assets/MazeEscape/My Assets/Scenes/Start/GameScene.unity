@@ -906,44 +906,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de132ee6fbd1ffc4685d8818dc99c176, type: 3}
---- !u!1001 &1508565474
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 751746152584840229, guid: e857fd81dfdf9f0478506dc956b5327d,
-        type: 3}
-      propertyPath: m_Name
-      value: AmbiencePlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631951920736703418, guid: e857fd81dfdf9f0478506dc956b5327d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631951920736703418, guid: e857fd81dfdf9f0478506dc956b5327d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1631951920736703418, guid: e857fd81dfdf9f0478506dc956b5327d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061374574514544117, guid: e857fd81dfdf9f0478506dc956b5327d,
-        type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 2124791868}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e857fd81dfdf9f0478506dc956b5327d, type: 3}
 --- !u!4 &1518414833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8666072451636918574, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
@@ -1394,7 +1356,6 @@ SceneRoots:
   - {fileID: 1783174151}
   - {fileID: 586311934}
   - {fileID: 5253655291783184384}
-  - {fileID: 1508565474}
   - {fileID: 317059838}
   - {fileID: 1445314970}
   - {fileID: 1805668254}
