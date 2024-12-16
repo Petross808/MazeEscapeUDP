@@ -319,7 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce78eea142e2f024c91770c44fee56ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onPlayButtonClickedEvent: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb,
+  _onNewGameButtonClickedEvent: {fileID: 11400000, guid: 8b4ce5093fa25b241beda6648a678c2a,
+    type: 2}
+  _onContinueButtonClickedEvent: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb,
     type: 2}
   _onSettingsButtonClickedEvent: {fileID: 11400000, guid: 4346e32a4fa9d724ab0308b363cb70c4,
     type: 2}

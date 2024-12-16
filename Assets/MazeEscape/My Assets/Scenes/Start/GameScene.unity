@@ -385,24 +385,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8711175330610916947, guid: aca29cf54cd1bee409b052ea6984eee8,
-        type: 3}
-      propertyPath: _onPlayButtonClickedEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b4ce5093fa25b241beda6648a678c2a,
-        type: 2}
-    - target: {fileID: 8711175330610916947, guid: aca29cf54cd1bee409b052ea6984eee8,
-        type: 3}
-      propertyPath: _onNewGameButtonClickedEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b4ce5093fa25b241beda6648a678c2a,
-        type: 2}
-    - target: {fileID: 8711175330610916947, guid: aca29cf54cd1bee409b052ea6984eee8,
-        type: 3}
-      propertyPath: _onContinueButtonClickedEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 64ccc8ed1072b594aac4d2c94576dabb,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
