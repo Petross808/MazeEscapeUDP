@@ -21,7 +21,7 @@ public class SaveLoadScript : MonoBehaviour
 
         this._saveDataObjects = FindAllSaveDataObjects();
         this._fileHandler = new FileHandler(Application.persistentDataPath, _fileName);
-        
+        this._saveData = new SaveData();
         SaveGame(new());
         this._initialSaveData = new SaveData(_saveData);
     }
@@ -29,7 +29,7 @@ public class SaveLoadScript : MonoBehaviour
     [EventSignature]
     public void NewGame(GameEvent.CallbackContext context)
     {
-        this._saveData = new SaveData(_initialSaveData);
+        this._fileHandler.Save(_initialSaveData);
     }
 
     [EventSignature]
