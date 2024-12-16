@@ -16,4 +16,14 @@ public class InteractScript : MonoBehaviour
             _interactEvent.Raise(this, hit.collider.gameObject, _playerInventory.Hand);
         }
     }
+
+    public void OnInspect()
+    {
+        _playerInventory.StartInspectItem();
+    }
+
+    public void OnInspectStop()
+    {
+        _playerInventory.StopInspectItem();
+    }
 }

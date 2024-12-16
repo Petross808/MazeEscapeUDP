@@ -50,6 +50,8 @@ public class PlayerControllerScript : MonoBehaviour
         _input.actions["Interact"].performed += OnInteract;
         _input.actions["Drop"].performed += OnDrop;
         _input.actions["Pause"].performed += OnPauseToggle;
+        _input.actions["Inspect"].performed += OnInspectStart;
+        _input.actions["Inspect"].canceled += OnInspectEnd;
     }
 
     private void UnRegisterInGameControls()
@@ -59,10 +61,15 @@ public class PlayerControllerScript : MonoBehaviour
         _input.actions["Walk"].performed -= WalkStart;
         _input.actions["Walk"].canceled -= WalkEnd;
         _input.actions["Aim"].performed -= AimChanged;
+        _input.actions["Interact"].performed -= OnInteract;
+        _input.actions["Drop"].performed -= OnDrop;
         _input.actions["Pause"].performed -= OnPauseToggle;
+        _input.actions["Inspect"].performed -= OnInspectStart;
+        _input.actions["Inspect"].canceled -= OnInspectEnd;
 
         RunEnd(new());
         WalkEnd(new());
+        OnInspectEnd(new());
     }
 
     private void RegisterMenuControls()
@@ -153,6 +160,16 @@ public class PlayerControllerScript : MonoBehaviour
     private void OnEscapeMenuPressed(InputAction.CallbackContext context)
     {
         _onEscapeMenuPressed.Raise(this);
+    }
+
+    private void OnInspectStart(InputAction.CallbackContext context)
+    {
+        _interactScript?.OnInspect();
+    }
+
+    private void OnInspectEnd(InputAction.CallbackContext context)
+    {
+        _interactScript?.OnInspectStop();
     }
 
 }
