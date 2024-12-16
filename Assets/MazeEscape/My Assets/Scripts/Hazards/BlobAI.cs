@@ -1,25 +1,32 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class BlobAIScript : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints; 
-    [SerializeField] private GameObject player;
-    [SerializeField] private float chaseDuration = 5f; 
-    [SerializeField] private float cooldownDuration = 3f; 
+    [SerializeField] private Transform player;
+    [SerializeField] private int chaseTickDuration = 50; 
+    [SerializeField] private int cooldownTickDuration = 30; 
     [SerializeField] private float patrolSpeed = 3.5f; 
     [SerializeField] private float chaseSpeed = 2f;
     [SerializeField] private float wanderRadius = 10f; 
-    [SerializeField] private float wanderInterval = 1.5f; 
+    [SerializeField] private int wanderTickDuration = 15;
+
+    [SerializeField] private GooScript _gooPrefab;
+    [SerializeField] private int _gooAmount;
+    [SerializeField] private int _gooTickDuration;
 
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
-    private float waitTimer = 0f;
-    private float chaseTimer = 0f;
-    private float cooldownTimer = 0f;
-    private float wanderTimer = 0f;
+    private int chaseTimer = 0;
+    private int cooldownTimer = 0;
+    private int wanderTimer = 0;
     private bool isChasingPlayer = false;
     private bool isInCooldown = false;
+
+    private List<GooScript> _gooTrail = new();
+    private int _currentGooIndex = 0;
 
     private void Awake()
     {
@@ -30,7 +37,8 @@ public class BlobAIScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    [EventSignature]
+    public void Tick(GameEvent.CallbackContext _)
     {
         if (isChasingPlayer)
         {
@@ -49,45 +57,42 @@ public class BlobAIScript : MonoBehaviour
     private void Patrol()
     {
         if (waypoints.Length == 0) return;
+        if (!agent.isOnNavMesh) return;
 
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            waitTimer += Time.deltaTime;
-
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-            agent.destination = waypoints[currentWaypointIndex].position;
-            waitTimer = 0f;
-            
         }
 
+        agent.SetDestination(waypoints[currentWaypointIndex].position);
         agent.speed = patrolSpeed;
     }
 
     private void ChasePlayer()
     {
-        chaseTimer += Time.deltaTime;
+        chaseTimer++;
 
-        if (chaseTimer <= chaseDuration)
+        if (chaseTimer <= chaseTickDuration)
         {
-            agent.destination = player.transform.position;
+            agent.destination = player.position;
             agent.speed = chaseSpeed;
         }
         else
         {
             isChasingPlayer = false;
             isInCooldown = true;
-            chaseTimer = 0f;
-            cooldownTimer = 0f;
-            wanderTimer = 0f; 
+            chaseTimer = 0;
+            cooldownTimer = 0;
+            wanderTimer = 0; 
         }
     }
 
     private void Wander()
     {
-        cooldownTimer += Time.deltaTime;
-        wanderTimer += Time.deltaTime;
+        cooldownTimer++;
+        wanderTimer++;
 
-        if (wanderTimer >= wanderInterval)
+        if (wanderTimer >= wanderTickDuration)
         {
             Vector3 wanderPoint = GetRandomPoint(transform.position, wanderRadius);
 
@@ -97,10 +102,10 @@ public class BlobAIScript : MonoBehaviour
                 agent.speed = patrolSpeed; 
             }
 
-            wanderTimer = 0f; 
+            wanderTimer = 0; 
         }
 
-        if (cooldownTimer >= cooldownDuration)
+        if (cooldownTimer >= cooldownTickDuration)
         {
             isInCooldown = false;
             GoToNextWaypoint();
@@ -122,12 +127,30 @@ public class BlobAIScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    [EventSignature(typeof(GameObject))]
+    public void ChasePlayer(GameEvent.CallbackContext context)
     {
-        if (collision.gameObject == player && !isInCooldown)
+        if (context.Get<GameObject>().transform.root == player && !isInCooldown)
         {
             isChasingPlayer = true;
-            chaseTimer = 0f;
+            chaseTimer = 0;
         }
+    }
+
+    [EventSignature]
+    public void DropGoo(GameEvent.CallbackContext _)
+    {
+        if (_gooAmount == 0) return;
+
+        _currentGooIndex = (_currentGooIndex + 1) % _gooAmount;
+        
+        while(_gooTrail.Count <= _currentGooIndex)
+        {
+            GooScript goo = Instantiate<GooScript>(_gooPrefab);
+            goo.gameObject.SetActive(false);
+            _gooTrail.Add(goo);
+        }
+
+        _gooTrail[_currentGooIndex].Spawn(transform.position, _gooTickDuration);
     }
 }
