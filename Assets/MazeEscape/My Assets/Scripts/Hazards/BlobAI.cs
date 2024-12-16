@@ -66,6 +66,7 @@ public class BlobAIScript : MonoBehaviour
 
         agent.SetDestination(waypoints[currentWaypointIndex].position);
         agent.speed = patrolSpeed;
+        agent.isStopped = false;
     }
 
     private void ChasePlayer()
@@ -152,5 +153,35 @@ public class BlobAIScript : MonoBehaviour
         }
 
         _gooTrail[_currentGooIndex].Spawn(transform.position, _gooTickDuration);
+    }
+
+    [EventSignature]
+    public void Stop(GameEvent.CallbackContext _)
+    {
+        agent.isStopped = true;
+    }
+
+    public void LoadData(SaveData data)
+    {
+        // currentWaypointIndex;
+        // chaseTimer
+        // cooldownTimer
+        // wanderTimer
+        // isChasingPlayer
+        // isInCooldown
+        // position
+        // rotation
+        // agent.isStopped
+
+
+
+        // dont save these, instead
+        // _gooTrail delete everything
+        // _currentGooIndex set to 0
+    }
+
+    public void SaveData(ref SaveData data)
+    {
+
     }
 }

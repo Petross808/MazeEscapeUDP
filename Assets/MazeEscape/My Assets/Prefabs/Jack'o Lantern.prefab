@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: jack_o'lantern1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d81bc9c8f51a172459ecec9e20d6a7c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -138,8 +138,8 @@ MonoBehaviour:
   wanderTickDuration: 20
   _gooPrefab: {fileID: -6847996581721899548, guid: 9f79ec5fd738b6b44bf8a9792cd120ad,
     type: 3}
-  _gooAmount: 20
-  _gooTickDuration: 100
+  _gooAmount: 50
+  _gooTickDuration: 120
 --- !u!195 &788332590477528316
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &9093034162779706481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 6d797c8b28d082e42bee6a982adc7194, type: 2}
+  _listeningTo: {fileID: 11400000, guid: 8a13fbb49fb31c04f87c0d94465c6af4, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:

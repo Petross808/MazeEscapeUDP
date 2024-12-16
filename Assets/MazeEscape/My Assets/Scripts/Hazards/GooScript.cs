@@ -32,5 +32,21 @@ public class GooScript : MonoBehaviour
         _duration--;
         if (_duration <= 0)
             gameObject.SetActive(false);
+
+        if(_duration < -600)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    public void LoadData(SaveData data)
+    {
+        // duration
+    }
+
+    public void SaveData(ref SaveData data)
+    {
+
     }
 }
