@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b65b7fac3f4a404aa304ec96e957c3e, type: 3}
   m_Name: E_UI_OnContinueButtonClicked
   m_EditorClassIdentifier: 
-  _editorName: OnContinueButtonClicked
-  _editorDescription: Raised when the continue button is clicked.
+  _editorName: OnPlayButtonClicked
+  _editorDescription: Raised when the play button is clicked.
   _debugLog: 0
   _contextVariables: []

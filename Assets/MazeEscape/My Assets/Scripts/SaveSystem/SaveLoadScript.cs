@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class SaveLoadScript : MonoBehaviour
 {
     private SaveData _saveData;
+    private SaveData _initialSaveData;
     private List<ISaveData> _saveDataObjects;
 
     [Header("File Storage Name")]
@@ -20,13 +21,15 @@ public class SaveLoadScript : MonoBehaviour
 
         this._saveDataObjects = FindAllSaveDataObjects();
         this._fileHandler = new FileHandler(Application.persistentDataPath, _fileName);
+        
+        SaveGame(new());
+        this._initialSaveData = new SaveData(_saveData);
     }
 
     [EventSignature]
     public void NewGame(GameEvent.CallbackContext context)
     {
-        this._saveData = new SaveData();
-        SaveGame(context);
+        this._saveData = new SaveData(_initialSaveData);
     }
 
     [EventSignature]

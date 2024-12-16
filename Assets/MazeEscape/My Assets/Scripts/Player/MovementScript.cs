@@ -82,14 +82,14 @@ public class MovementScript : MonoBehaviour, IControllable, ISaveData
 
     public void LoadData(SaveData data)
     {
-        this._head = data.playerHead;
+        this._head.localRotation = data.playerHeadRotation;
         this._agent.Warp(data.playerPosition);
         this._agent.gameObject.transform.rotation = data.playerRotation;
     }
 
     public void SaveData(ref SaveData data)
     {
-        data.playerHead = this._head;
+        data.playerHeadRotation = this._head.localRotation;
         data.playerPosition = this._agent.nextPosition;
         data.playerRotation = this._agent.gameObject.transform.rotation;
     }
