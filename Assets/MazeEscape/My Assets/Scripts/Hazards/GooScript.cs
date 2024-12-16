@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering.HighDefinition;
-using UnityEditor.Rendering.HighDefinition;
+using System;
 
 public class GooScript : MonoBehaviour
 {
     private int _duration = 0;
     private Material _material;
+
+    public int Duration { get => _duration; }
 
     private void Awake()
     {
@@ -22,8 +23,8 @@ public class GooScript : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = position;
         _duration = duration;
-        _material.SetFloat("_NoiseOffsetX", Random.Range(0f, 1000f));
-        _material.SetFloat("_NoiseOffsetY", Random.Range(0f, 1000f));
+        _material.SetFloat("_NoiseOffsetX", UnityEngine.Random.Range(0f, 1000f));
+        _material.SetFloat("_NoiseOffsetY", UnityEngine.Random.Range(0f, 1000f));
     }
 
     [EventSignature]
@@ -32,21 +33,12 @@ public class GooScript : MonoBehaviour
         _duration--;
         if (_duration <= 0)
             gameObject.SetActive(false);
-
-        if(_duration < -600)
-        {
-            Destroy(gameObject);
-        }
     }
 
-
-    public void LoadData(SaveData data)
+    [Serializable]
+    public struct GooData
     {
-        // duration
-    }
-
-    public void SaveData(ref SaveData data)
-    {
-
+        public Vector3 pos;
+        public int dur;
     }
 }

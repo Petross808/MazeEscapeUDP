@@ -140,8 +140,8 @@ MonoBehaviour:
   wanderTickDuration: 20
   _gooPrefab: {fileID: -6847996581721899548, guid: 9f79ec5fd738b6b44bf8a9792cd120ad,
     type: 3}
-  _gooAmount: 50
-  _gooTickDuration: 120
+  _gooAmount: 51
+  _gooTickDuration: 100
 --- !u!195 &788332590477528316
 NavMeshAgent:
   m_ObjectHideFlags: 0
