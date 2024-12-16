@@ -205,12 +205,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 760081411}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &374054256 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9215190223439952387, guid: de132ee6fbd1ffc4685d8818dc99c176,
-    type: 3}
-  m_PrefabInstance: {fileID: 1445314970}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,52 +1097,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8d516f7bd7bf543be3320cf20152ae, type: 3}
---- !u!1 &1903142585 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5371226426790103381, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064615135}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1903142589 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4927424916864600674, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064615135}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903142585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2097d40c237376848be0125d47bb7665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1903142590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903142585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listeningTo: {fileID: 11400000, guid: 8b4ce5093fa25b241beda6648a678c2a, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1903142589}
-        m_TargetAssemblyTypeName: SaveLoadScript, Assembly-CSharp
-        m_MethodName: NewGame
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2064615135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1157,30 +1105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1783174151}
     m_Modifications:
-    - target: {fileID: 4927424916864600674, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-        type: 3}
-      propertyPath: _rotationsToSave.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927424916864600674, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-        type: 3}
-      propertyPath: '_rotationsToSave.Array.data[0]'
-      value: 
-      objectReference: {fileID: 374054256}
     - target: {fileID: 5371226426790103381, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
         type: 3}
       propertyPath: m_Name
       value: SaveSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 5799972242341961416, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-        type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5804158478311186315, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-        type: 3}
-      propertyPath: _response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
       objectReference: {fileID: 0}
     - target: {fileID: 8666072451636918574, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
         type: 3}
@@ -1235,11 +1163,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5371226426790103381, guid: d6a7a4a12e796b44f859e43fd6ed79fd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1903142590}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a7a4a12e796b44f859e43fd6ed79fd, type: 3}
 --- !u!114 &2123068825 stripped
 MonoBehaviour:
