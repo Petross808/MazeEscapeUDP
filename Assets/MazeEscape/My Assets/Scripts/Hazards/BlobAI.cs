@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class BlobAIScript : MonoBehaviour
+public class BlobAIScript : MonoBehaviour, ISaveData
 {
     [SerializeField] private Transform[] waypoints; 
     [SerializeField] private Transform player;
@@ -59,7 +59,7 @@ public class BlobAIScript : MonoBehaviour
         if (waypoints.Length == 0) return;
         if (!agent.isOnNavMesh) return;
 
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        if (!agent.pathPending && agent.hasPath && agent.remainingDistance < 0.5f)
         {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
@@ -147,13 +147,20 @@ public class BlobAIScript : MonoBehaviour
         
         while(_gooTrail.Count <= _currentGooIndex)
         {
-            GooScript goo = Instantiate<GooScript>(_gooPrefab);
-            goo.gameObject.SetActive(false);
-            _gooTrail.Add(goo);
+            CreateGoo();
         }
 
         _gooTrail[_currentGooIndex].Spawn(transform.position, _gooTickDuration);
     }
+
+    public GooScript CreateGoo()
+    {
+        GooScript goo = Instantiate<GooScript>(_gooPrefab);
+        goo.gameObject.SetActive(false);
+        _gooTrail.Add(goo);
+        return goo;
+    }
+
 
     [EventSignature]
     public void Stop(GameEvent.CallbackContext _)
@@ -163,25 +170,61 @@ public class BlobAIScript : MonoBehaviour
 
     public void LoadData(SaveData data)
     {
-        // currentWaypointIndex;
-        // chaseTimer
-        // cooldownTimer
-        // wanderTimer
-        // isChasingPlayer
-        // isInCooldown
-        // position
-        // rotation
-        // agent.isStopped
+        currentWaypointIndex = data.blob_currentWaypointIndex;
+        chaseTimer = data.blob_chaseTimer;
+        cooldownTimer = data.blob_cooldownTimer;
+        wanderTimer = data.blob_wanderTimer;
+        isChasingPlayer = data.blob_isChasingPlayer;
+        isInCooldown = data.blob_isInCooldown;
+        agent.Warp(data.blob_position);
+        transform.rotation = data.blob_rotation;
+        agent.isStopped = data.blob_isStopped;
+        _currentGooIndex = data.blob_currentGooIndex;
 
+        foreach(GooScript goo in _gooTrail)
+        {
+            goo.gameObject.SetActive(false);
+        }
 
+        for(int i = 0; i < data.blob_gooTrail.Count; i++)
+        {
+            if(i >= _gooTrail.Count)
+            {
+                CreateGoo();
+            }
 
-        // dont save these, instead
-        // _gooTrail delete everything
-        // _currentGooIndex set to 0
+            if(data.blob_gooTrail[i].dur > 0)
+            {
+                _gooTrail[i].Spawn(data.blob_gooTrail[i].pos, data.blob_gooTrail[i].dur);
+            }
+            else
+            {
+                _gooTrail[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     public void SaveData(ref SaveData data)
     {
+        data.blob_currentWaypointIndex = currentWaypointIndex;
+        data.blob_chaseTimer = chaseTimer;
+        data.blob_cooldownTimer = cooldownTimer;
+        data.blob_wanderTimer = wanderTimer;
+        data.blob_isChasingPlayer = isChasingPlayer;
+        data.blob_isInCooldown = isInCooldown;
+        data.blob_position = agent.nextPosition;
+        data.blob_rotation = transform.rotation;
+        data.blob_isStopped = agent.isStopped;
+        data.blob_currentGooIndex = _currentGooIndex;
 
+        if (data.blob_gooTrail == null)
+            data.blob_gooTrail = new();
+        else
+            data.blob_gooTrail.Clear();
+
+        foreach (GooScript goo in _gooTrail)
+        {
+            data.blob_gooTrail.Add(new() { pos = goo.transform.position, dur = goo.Duration });
+        }
     }
 }

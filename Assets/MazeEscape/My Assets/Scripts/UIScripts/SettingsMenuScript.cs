@@ -33,6 +33,13 @@ public class SettingsMenuScript : MonoBehaviour
 
         _sfxSlider = _document.rootVisualElement.Q<Slider>("SFXSlider");
         _sfxSlider.RegisterValueChangedCallback(evt => OnSFXVolumeChange(evt.newValue));
+
+        if (PlayerPrefs.HasKey("masterVolume"))
+            _masterSlider.value = PlayerPrefs.GetFloat("masterVolume") * 10;
+        if (PlayerPrefs.HasKey("musicVolume"))
+            _musicSlider.value = PlayerPrefs.GetFloat("musicVolume") * 10;
+        if (PlayerPrefs.HasKey("sfxVolume"))
+            _sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume") * 10;
     }
 
     private void CloseSettings(ClickEvent evt)
@@ -51,17 +58,17 @@ public class SettingsMenuScript : MonoBehaviour
 
     private void OnMasterVolumeChange(float value)
     {
-        _onMasterVolumeSliderChange.Raise(this, value/100);
+        _onMasterVolumeSliderChange.Raise(this, value/10);
     }
 
     private void OnMusicVolumeChange(float value)
     {
-        _onMusicVolumeSliderChange.Raise(this, value / 100);
+        _onMusicVolumeSliderChange.Raise(this, value / 10);
     }
 
     private void OnSFXVolumeChange(float value)
     {
-        _onSFXVolumeSliderChange.Raise(this, value / 100);
+        _onSFXVolumeSliderChange.Raise(this, value / 10);
     }
 
 }

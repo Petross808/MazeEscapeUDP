@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class AudioSystemScript : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class AudioSystemScript : MonoBehaviour
         {
             AddNewToPool();
         }
+
+        if (PlayerPrefs.HasKey("masterVolume"))
+            _masterVolume = PlayerPrefs.GetFloat("masterVolume");
+        if (PlayerPrefs.HasKey("musicVolume"))
+            _musicVolume = PlayerPrefs.GetFloat("musicVolume");
+        if (PlayerPrefs.HasKey("sfxVolume"))
+            _sfxVolume = PlayerPrefs.GetFloat("sfxVolume");
     }
 
     private AudioSource AddNewToPool()
@@ -84,6 +92,7 @@ public class AudioSystemScript : MonoBehaviour
     {
         _masterVolume = context.Get<float>();
         UpdateVolume();
+        PlayerPrefs.SetFloat("masterVolume", _masterVolume);
     }
 
     [EventSignature(typeof(float))]
@@ -91,6 +100,7 @@ public class AudioSystemScript : MonoBehaviour
     {
         _sfxVolume = context.Get<float>();
         UpdateVolume();
+        PlayerPrefs.SetFloat("sfxVolume", _sfxVolume);
     }
 
     [EventSignature(typeof(float))]
@@ -98,6 +108,7 @@ public class AudioSystemScript : MonoBehaviour
     {
         _musicVolume = context.Get<float>();
         UpdateVolume();
+        PlayerPrefs.SetFloat("musicVolume", _musicVolume);
     }
 
     private void UpdateVolume()
