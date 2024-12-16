@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
   m_Name: BGTrack_Bass
   m_EditorClassIdentifier: 
-  _editorName: 
+  _editorName: BGTrack_Bass
   _editorDescription: 
   _pickAtRandom: 0
   _diegetic: 0

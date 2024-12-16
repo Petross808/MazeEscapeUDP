@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
+  m_Name: SFX_KeyDrop
+  m_EditorClassIdentifier: 
+  _editorName: KeyDrop
+  _editorDescription: 
+  _pickAtRandom: 1
+  _diegetic: 1
+  _isMusicTrack: 0
+  _isLooping: 0
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: e1023d4081133a04eaa558b7f535191c, type: 3}
+  - {fileID: 8300000, guid: 44ab6459c6f068449b9a0d8a6d8ce277, type: 3}
+  - {fileID: 8300000, guid: 6839fc4b28b0a634eafe6e40e03312f5, type: 3}

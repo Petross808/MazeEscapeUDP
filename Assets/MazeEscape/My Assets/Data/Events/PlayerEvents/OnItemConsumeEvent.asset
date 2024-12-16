@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OnItemConsumeEvent
   m_EditorClassIdentifier: 
   _editorName: OnItemConsumeEvent
-  _editorDescription: 
+  _editorDescription: Raised when an item is consumed.
   _debugLog: 0
   _contextVariables:
   - Name: ConsumedItem

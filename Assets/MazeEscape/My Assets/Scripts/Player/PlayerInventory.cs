@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField, EventSignature(typeof(Item))] private GameEvent _dropEvent;
     [SerializeField] private Item _empty;
 
     private Item _hand;
@@ -46,6 +47,7 @@ public class PlayerInventory : MonoBehaviour
             _hand.transform.rotation = transform.rotation;
             _hand.transform.Rotate(0, _empty.transform.rotation.eulerAngles.y, 0);
             _hand.transform.parent = null;
+            _dropEvent.Raise(this, _hand);
             _hand = _empty;
         }
     }

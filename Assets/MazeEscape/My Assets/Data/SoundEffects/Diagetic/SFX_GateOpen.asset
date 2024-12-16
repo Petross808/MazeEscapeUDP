@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfed3cb819ac4c4c940d02010fe904d, type: 3}
   m_Name: SFX_GateOpen
   m_EditorClassIdentifier: 
-  _editorName: 
+  _editorName: GateOpen
   _editorDescription: 
   _pickAtRandom: 1
   _diegetic: 1
   _isMusicTrack: 0
   _isLooping: 0
-  _soundEffectVariants: []
+  _soundEffectVariants:
+  - {fileID: 8300000, guid: 1550921034766d540849ba5004a43e4f, type: 3}
+  - {fileID: 8300000, guid: fb94decc7966dc54e926686a41ddb1d5, type: 3}
+  - {fileID: 8300000, guid: 409397a4f5f0b81438be58b55d1c7412, type: 3}
+  - {fileID: 8300000, guid: 36843c12f1e74904dacc4ed80679f603, type: 3}
