@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listeningTo: {fileID: 11400000, guid: cadb6bdabc551934c925a39f16daa9d1, type: 2}
-  _immunityTime: 1.5
+  _immunityTime: 3
   _hurtboxCollider: {fileID: 2440039804231038543}
 --- !u!1 &7839841866121523076
 GameObject:
