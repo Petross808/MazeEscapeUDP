@@ -141,6 +141,7 @@ public class ScarecrowAIScript : MonoBehaviour, ISaveData
 
         if(_loseAggroAfterRepathAttempts > 0 && _aggroTimer >= _loseAggroAfterRepathAttempts)
         {
+            _aggroTimer = 0;
             Activated = false;
             _agent.Warp(_homePosition);
             transform.forward = _homeRotation;
