@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1136261706184513687
 Transform:
@@ -133,7 +133,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5215037061772564555
 Transform:
@@ -4919,7 +4919,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7720074137016919283
 Transform:
@@ -18921,7 +18921,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7225000969082038292
 Transform:
@@ -19004,7 +19004,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2240563484396480687
 Transform:
@@ -19085,6 +19085,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack'o Lantern (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -19140,6 +19145,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19163,6 +19178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19219,6 +19239,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19242,6 +19272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19298,6 +19333,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19321,6 +19366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19377,6 +19427,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19400,6 +19460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19456,6 +19521,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19479,6 +19554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19535,6 +19615,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19558,6 +19648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19614,6 +19709,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19637,6 +19742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1147786219652950840, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19698,6 +19808,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19721,6 +19841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19776,6 +19901,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19851,10 +19986,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -6208502038820993046, guid: c3dc280191e2df8429ebf882fc0de572,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 814172001358484468, guid: c3dc280191e2df8429ebf882fc0de572,
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 814172001358484468, guid: c3dc280191e2df8429ebf882fc0de572,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c3dc280191e2df8429ebf882fc0de572,
         type: 3}
@@ -19866,15 +20011,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3dc280191e2df8429ebf882fc0de572,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5288213621616380266, guid: c3dc280191e2df8429ebf882fc0de572,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288213621616380266, guid: c3dc280191e2df8429ebf882fc0de572,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134837689134937748, guid: c3dc280191e2df8429ebf882fc0de572,
         type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8134837689134937748, guid: c3dc280191e2df8429ebf882fc0de572,
         type: 3}
-      propertyPath: m_Layer
-      value: 7
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19903,6 +20063,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -19959,6 +20124,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19982,6 +20157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20038,6 +20218,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20057,10 +20247,105 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2240563484396480687}
     m_Modifications:
+    - target: {fileID: 45811722164608959, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215545814567500665, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461220402842903755, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561470061458926375, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968380569540836921, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460541109304784889, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547795206613712595, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
       propertyPath: m_Name
       value: Checkpoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659483421135236027, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556436577966240408, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669363428309250549, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720743291347346806, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822579196647003007, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261054814607193017, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309357893028350670, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588885205688182936, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004479596119538402, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855761242311767309, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774024985367317042, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9124429641556348041, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
@@ -20136,6 +20421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack'o Lantern (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -20191,6 +20481,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20214,6 +20514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20265,6 +20570,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20288,6 +20603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20344,6 +20664,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20367,6 +20697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20418,6 +20753,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20441,6 +20786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20492,6 +20842,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20515,6 +20875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20571,6 +20936,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20594,6 +20969,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20645,6 +21025,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20668,6 +21058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20724,6 +21119,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20747,6 +21152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20803,6 +21213,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20826,6 +21246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20882,6 +21307,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20905,6 +21340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -20956,6 +21396,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20975,10 +21425,105 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2240563484396480687}
     m_Modifications:
+    - target: {fileID: 45811722164608959, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215545814567500665, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461220402842903755, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561470061458926375, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968380569540836921, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460541109304784889, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547795206613712595, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
       propertyPath: m_Name
       value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659483421135236027, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556436577966240408, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669363428309250549, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720743291347346806, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822579196647003007, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261054814607193017, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309357893028350670, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588885205688182936, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004479596119538402, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855761242311767309, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774024985367317042, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9124429641556348041, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
@@ -21055,6 +21600,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack'o Lantern (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -21110,6 +21660,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21133,6 +21693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21189,6 +21754,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21212,6 +21787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21268,6 +21848,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21291,6 +21881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21347,6 +21942,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21370,6 +21975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21426,6 +22036,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21449,6 +22069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21505,6 +22130,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21524,10 +22159,105 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2240563484396480687}
     m_Modifications:
+    - target: {fileID: 45811722164608959, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215545814567500665, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461220402842903755, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561470061458926375, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968380569540836921, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460541109304784889, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547795206613712595, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
       propertyPath: m_Name
       value: Checkpoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659165341715637238, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659483421135236027, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556436577966240408, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669363428309250549, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720743291347346806, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822579196647003007, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261054814607193017, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309357893028350670, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588885205688182936, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004479596119538402, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855761242311767309, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774024985367317042, guid: eb81824269b3dca47842332bd613429a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9124429641556348041, guid: eb81824269b3dca47842332bd613429a,
         type: 3}
@@ -21603,6 +22333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack'o Lantern (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21653,6 +22388,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21676,6 +22421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21727,6 +22477,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21750,6 +22510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21806,6 +22571,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21829,6 +22604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21885,6 +22665,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21908,6 +22698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -21964,6 +22759,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21987,6 +22792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22043,6 +22853,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22066,6 +22886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1147786219652950840, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22132,6 +22957,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22155,6 +22990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22211,6 +23051,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22234,6 +23084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22285,6 +23140,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22308,6 +23173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22364,6 +23234,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22387,6 +23267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22443,6 +23328,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22466,6 +23361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22522,6 +23422,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22545,6 +23455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22601,6 +23516,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22624,6 +23549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22680,6 +23610,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22703,6 +23643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22759,6 +23704,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22782,6 +23737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22838,6 +23798,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22861,6 +23831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22912,6 +23887,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22935,6 +23920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -22991,6 +23981,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23014,6 +24014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -23065,6 +24070,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23088,6 +24103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -23139,6 +24159,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23162,6 +24192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -23218,6 +24253,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23241,6 +24286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jack'o Lantern (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 588642273211975636, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3370509116350137655, guid: f84face6cdb562f4da72db379ab63ce0,
         type: 3}
@@ -23296,6 +24346,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497568858219654018, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090297999696556286, guid: f84face6cdb562f4da72db379ab63ce0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

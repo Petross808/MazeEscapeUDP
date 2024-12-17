@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GenerateNavSurface : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Awake()
     {
         NavMeshSurface navMeshSurface = GetComponent<NavMeshSurface>();
