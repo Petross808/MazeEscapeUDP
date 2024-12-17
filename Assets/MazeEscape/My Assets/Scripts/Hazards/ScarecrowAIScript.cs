@@ -1,7 +1,5 @@
-
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class ScarecrowAIScript : MonoBehaviour, ISaveData
