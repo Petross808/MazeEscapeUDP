@@ -63,6 +63,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void StopInspectItem()
     {
+        if (_hand == null) return;
         if (_hand == _empty) return;
         _hand.transform.position = _empty.transform.position;
         _hand.transform.rotation = _empty.transform.rotation;
