@@ -21,6 +21,7 @@ public class GooScript : MonoBehaviour
     {
         gameObject.SetActive(true);
         transform.position = position;
+        transform.rotation = Quaternion.Euler(new(90, UnityEngine.Random.Range(0f, 360f), 0));
         _duration = duration;
         _material.SetFloat("_NoiseOffsetX", Random.Range(0f, 1000f));
         _material.SetFloat("_NoiseOffsetY", Random.Range(0f, 1000f));

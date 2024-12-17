@@ -132,14 +132,17 @@ Material:
     - _NoiseOffsetY: 41.004898
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PulseStrength: 0.025
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0.25
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _WiggleStrength: 0.1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
