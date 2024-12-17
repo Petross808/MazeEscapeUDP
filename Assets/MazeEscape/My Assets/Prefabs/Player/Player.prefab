@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 3159608330254496980}
   - component: {fileID: 6859700466411381604}
   - component: {fileID: 844899170518730784}
+  - component: {fileID: 7540564156049133241}
   - component: {fileID: 9173592318257739066}
   m_Layer: 0
   m_Name: Player
@@ -519,6 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactEvent: {fileID: 11400000, guid: 00dfb261d2ba05a48902196a0924c1fb, type: 2}
+  _onAimAtInteractable: {fileID: 11400000, guid: 605eeef5484db454faec81fc4ccd908b,
+    type: 2}
+  _onAimAtNonInteractable: {fileID: 11400000, guid: be0b351e570a91f468694df04f098c71,
+    type: 2}
   _playerHead: {fileID: 9137610141359929993}
   _interactReach: 2
   _playerInventory: {fileID: 3159608330254496980}
@@ -584,6 +589,34 @@ MonoBehaviour:
       - m_Target: {fileID: 3159608330254496980}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
         m_MethodName: ConsumeItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7540564156049133241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839841866121523076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b00195dd1b29224e838f2a2069f0fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeningTo: {fileID: 11400000, guid: 8a13fbb49fb31c04f87c0d94465c6af4, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7633119153281101090}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: CheckInteract
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
